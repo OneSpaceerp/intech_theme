@@ -97,9 +97,10 @@ DEFAULT_DESK_BACKDROP = "Circuit"
 # gradient. An app missing from here gets a monogram tile in the brand blues (see
 # `monogram_icon`), so a newly installed app never shows its vendor's logo either.
 #
-# The ERP itself wears the In Tech tile: it is the product the site is selling.
+# The ERP itself wears the In Tech mark, redrawn as a tile like the others: it is the product
+# the site is selling.
 APP_IDENTITIES = {
-	"erpnext": {"title": "In Tech ERP", "glyph": "brand", "colors": ("#C3DFEC", "#7898B8")},
+	"erpnext": {"title": "In Tech ERP", "glyph": "intech", "colors": ("#1E90D2", "#1E2448")},
 	"frappe": {"title": "Platform", "glyph": "platform", "colors": ("#245490", "#1E2448")},
 	"hrms": {"title": "People", "glyph": "people", "colors": ("#0F9D9A", "#0B5F73")},
 	"crm": {"title": "CRM", "glyph": "crm", "colors": ("#D9480F", "#A61E4D")},
@@ -131,8 +132,6 @@ def app_icon_url(app: str) -> str | None:
 	identity = APP_IDENTITIES.get(app)
 	if not identity:
 		return None
-	if identity["glyph"] == "brand":
-		return BRAND_TILE
 	return f"{ICON_DIR}/{app}.svg"
 
 

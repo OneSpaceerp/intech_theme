@@ -10,7 +10,11 @@
 //   * the wordmark beside the logo in the header;
 //   * a greeting above the app tiles;
 //   * In Tech captions on the App tiles of the Desktop Icons grid, whose labels the server
-//     must leave alone (a saved layout finds its icons by label).
+//     must leave alone (a saved layout finds its icons by label);
+//   * the English / Arabic switcher, in the header here and at the foot of the sidebar on
+//     every other page.
+
+import { make_button } from "./intech-language";
 
 let settings = {};
 
@@ -99,8 +103,30 @@ function rename_app_tiles($page) {
 	});
 }
 
+function current_language() {
+	return (frappe.boot && frappe.boot.lang) || settings.language || "en";
+}
+
+function render_header_switch($page) {
+	const $navbar = $page.find(".desktop-navbar").first();
+	if (!$navbar.length || $navbar.find(".intech-lang-switch").length) return;
+	const button = make_button(current_language(), "header");
+	const $bell = $navbar.find(".desktop-notifications").first();
+	if ($bell.length) $bell.before(button);
+	else $navbar.append(button);
+}
+
+// The sidebar is drawn once and then re-filled as you move around, so this is checked on
+// every change and put back if it went.
+function ensure_sidebar_switch() {
+	const bottom = document.querySelector(".body-sidebar .body-sidebar-bottom");
+	if (!bottom || bottom.querySelector(".intech-lang-switch")) return;
+	bottom.insertBefore(make_button(current_language(), "sidebar"), bottom.firstChild);
+}
+
 function decorate() {
 	sync_route_class();
+	if (settings.show_language_switcher) ensure_sidebar_switch();
 	if (!on_desktop()) return;
 
 	const $page = $("#page-desktop, .page-container[data-page-route='desktop']").first();
@@ -109,6 +135,7 @@ function decorate() {
 	if (settings.show_desk_greeting) render_hero($page);
 	if (settings.white_label) render_wordmark($page);
 	if (settings.replace_app_icons) rename_app_tiles($page);
+	if (settings.show_language_switcher) render_header_switch($page);
 }
 
 /** Wire the /desk additions. `on_dom_change` is the white-label pass's frame-throttled hook. */
@@ -129,6 +156,6 @@ export function start(theme_settings, on_dom_change) {
 /** Called after In Tech Theme Settings is saved, with the settings fetched again. */
 export function refresh(theme_settings) {
 	settings = theme_settings || settings;
-	$(".intech-desk-hero, .intech-wordmark").remove();
+	$(".intech-desk-hero, .intech-wordmark, .intech-lang-switch").remove();
 	decorate();
 }

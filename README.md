@@ -12,8 +12,9 @@ It makes the desk read as one product, **In Tech**, rather than as ERPNext on Fr
   vendor help links, promotions, update pop-ups and telemetry are switched off.
 - **App icons**: every installed app gets an In Tech name and tile on the apps screen, the dock
   and the sidebar header (ERPNext becomes *In Tech ERP*, Frappe HR becomes *People*, the
-  framework becomes *Platform*, and so on). An app the theme does not know gets a monogram tile,
-  so no vendor logo ever shows.
+  framework becomes *Platform*, and so on). In Tech ERP wears the INTECH mark redrawn as a
+  vector tile. An app the theme does not know gets a monogram tile, so no vendor logo ever
+  shows.
 - **Palette**: taken from the logo: ink `#1E2448`, deep `#245490`, primary `#2472AE`, azure
   `#1E90D2`, steel `#7898B8`, mist `#ABC7DA`, ice `#C3DFEC`. Light and dark (dark is navy, not
   grey).
@@ -23,6 +24,10 @@ It makes the desk read as one product, **In Tech**, rather than as ERPNext on Fr
 - **`/desk` backgrounds**: *Circuit* (the logo's traces, drawn large), *Aurora*, *Mesh*,
   *Waves*, or your own picture under a brand tint, with a frosted header, a greeting and glass
   app tiles.
+- **English / Arabic switcher**: a button in the `/desk` header, at the foot of the sidebar and
+  on the login page. It names the language it switches to, in that language, and sets the
+  user's own language (or, signed out, the `preferred_language` cookie); the page reloads in
+  that language and direction. The Arabic language must be enabled on the site.
 
 Nothing in `frappe/` or `erpnext/` is modified. Everything attaches through hooks, template
 overrides, translations and CSS custom properties, so `bench update` does not undo it.
@@ -63,7 +68,7 @@ open session without a reload.
 |---|---|
 | Brand | Name (and an Arabic spelling, if wanted), tagline, logo, logo for dark surfaces, favicon, loading image, copyright line, support address, email footer |
 | White Label | Master switch; renaming interface text; replacing app icons and names; hiding vendor help links, promotions and update notices; telemetry |
-| Theme | Primary, accent and ink colours; sidebar style (Navy, Gradient, Light); colourful menus and their palette; forced dark mode; font |
+| Theme | Primary, accent and ink colours; sidebar style (Navy, Gradient, Light); colourful menus and their palette; forced dark mode; font; the English / Arabic switcher |
 | Desk Background | The `/desk` background (Circuit, Aurora, Mesh, Waves, Image, None), the picture and how strongly it is tinted, the greeting, glass tiles, and an optional quieter background behind workspaces |
 | Apps | Rename or re-icon a particular app: its package name (`erpnext`, `hrms`, ...) and the title or icon to show instead |
 | Login Page | Headline, supporting line, and a background picture for the brand panel |

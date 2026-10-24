@@ -1,0 +1,146 @@
+/* In Tech — the English / Arabic switcher (intech-language.js).
+   =========================================================================
+   Three variants of one button:
+     --header    a pill in the /desk header, beside the bell
+     --sidebar   a row at the foot of the sidebar; folds to its globe when the
+                 sidebar is collapsed
+     --floating  the login page's top corner
+   It names the language it switches to, set in that language, so the
+   Arabic label gets an Arabic face whatever the page is set in.
+   ========================================================================= */
+
+.intech-lang-switch {
+	display: inline-flex;
+	align-items: center;
+	gap: 7px;
+	border: 1px solid color-mix(in srgb, var(--it-steel, #7898b8) 35%, transparent);
+	background: color-mix(in srgb, var(--bg-color, #fff) 72%, transparent);
+	color: var(--it-ink, #1e2448);
+	font: 600 13px/1 var(--it-font, system-ui, sans-serif);
+	cursor: pointer;
+	transition: background-color 0.15s ease, border-color 0.15s ease, box-shadow 0.15s ease, color 0.15s ease;
+}
+
+.intech-lang-switch[lang="ar"] .intech-lang-switch__label,
+.intech-lang-switch[lang="ar"] .intech-lang-switch__short {
+	font-family: "Cairo", "IBM Plex Sans Arabic", "Segoe UI", system-ui, sans-serif;
+	font-size: 14px;
+}
+
+.intech-lang-switch__icon {
+	display: inline-flex;
+	color: var(--it-accent, #1e90d2);
+}
+
+.intech-lang-switch__short {
+	display: none;
+}
+
+.intech-lang-switch:hover {
+	border-color: var(--it-accent, #1e90d2);
+	box-shadow: 0 0 0 3px color-mix(in srgb, var(--it-accent, #1e90d2) 16%, transparent);
+}
+
+.intech-lang-switch:focus-visible {
+	outline: 2px solid var(--it-accent, #1e90d2);
+	outline-offset: 2px;
+}
+
+.intech-lang-switch.is-busy {
+	opacity: 0.6;
+	cursor: progress;
+}
+
+[data-theme="dark"] .intech-lang-switch {
+	color: #eef3fb;
+	background: rgba(20, 26, 51, 0.6);
+	border-color: rgba(255, 255, 255, 0.14);
+}
+
+/* ---- /desk header ------------------------------------------------------ */
+.intech-lang-switch--header {
+	height: 32px;
+	padding: 0 12px 0 10px;
+	border-radius: 999px;
+	backdrop-filter: blur(10px);
+	-webkit-backdrop-filter: blur(10px);
+}
+
+html[data-intech-backdrop="image"] body.intech-on-desktop .intech-lang-switch--header {
+	color: #ffffff;
+	background: rgba(15, 20, 40, 0.35);
+	border-color: rgba(255, 255, 255, 0.25);
+}
+
+@media (max-width: 767px) {
+	.intech-lang-switch--header {
+		width: 32px;
+		padding: 0;
+		justify-content: center;
+	}
+	.intech-lang-switch--header .intech-lang-switch__label {
+		display: none;
+	}
+}
+
+/* ---- Sidebar foot ------------------------------------------------------ */
+/* On the sidebar's own surface (navy, gradient or ice), so it borrows the
+   sidebar's ink rather than the page's. */
+.intech-lang-switch--sidebar {
+	width: 100%;
+	min-height: 34px;
+	margin-bottom: 4px;
+	padding: 0 10px;
+	border-radius: 8px;
+	background: transparent;
+	border-color: var(--it-side-border, rgba(255, 255, 255, 0.1));
+	color: var(--it-side-ink, inherit);
+	white-space: nowrap;
+	overflow: hidden;
+}
+
+.intech-lang-switch--sidebar:hover {
+	background: var(--it-side-hover, rgba(255, 255, 255, 0.07));
+	color: var(--it-side-ink-strong, inherit);
+	box-shadow: none;
+}
+
+.intech-lang-switch--sidebar .intech-lang-switch__icon {
+	color: color-mix(in srgb, var(--it-accent, #1e90d2) 70%, #ffffff);
+}
+
+html[data-intech-sidebar="light"] .intech-lang-switch--sidebar .intech-lang-switch__icon {
+	color: var(--it-accent, #1e90d2);
+}
+
+/* Collapsed to its rail: the globe alone, centred. */
+.body-sidebar-container:not(.expanded) .intech-lang-switch--sidebar {
+	justify-content: center;
+	padding: 0;
+	border-color: transparent;
+}
+
+.body-sidebar-container:not(.expanded) .intech-lang-switch--sidebar .intech-lang-switch__label {
+	display: none;
+}
+
+/* ---- Login page corner ------------------------------------------------- */
+.intech-lang-switch--floating {
+	position: fixed;
+	top: 18px;
+	inset-inline-end: 20px;
+	z-index: 30;
+	height: 36px;
+	padding: 0 14px 0 12px;
+	border-radius: 999px;
+	background: rgba(255, 255, 255, 0.85);
+	backdrop-filter: blur(12px);
+	-webkit-backdrop-filter: blur(12px);
+	box-shadow: 0 10px 24px -16px rgba(30, 36, 72, 0.5);
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.intech-lang-switch {
+		transition: none;
+	}
+}

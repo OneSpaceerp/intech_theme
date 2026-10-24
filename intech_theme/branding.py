@@ -59,6 +59,7 @@ DEFAULTS = frappe._dict(
 	menu_palette=DEFAULT_MENU_PALETTE,
 	force_dark_mode=0,
 	font_family="Inter",
+	show_language_switcher=1,
 	desk_backdrop=DEFAULT_DESK_BACKDROP,
 	desk_background_image="",
 	backdrop_dim=35,

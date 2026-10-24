@@ -4,6 +4,9 @@
 // sign-up flow all keep working because nothing about them is replaced. The theme adds a brand
 // panel beside the form and the wordmark above it. The copy comes from the inline payload the
 // server writes into every web page (api/website.py), so a signed-out visitor makes no request.
+// The English / Arabic switcher sits in the page's top corner.
+
+import { make_button } from "./intech-language";
 
 function payload() {
 	const element = document.getElementById("intech-web");
@@ -54,6 +57,10 @@ export function start() {
 
 	if (!document.querySelector(".intech-login-panel")) {
 		document.body.appendChild(brand_panel(data));
+	}
+
+	if (data.show_language_switcher && !document.querySelector(".intech-lang-switch")) {
+		document.body.appendChild(make_button(data.language, "floating"));
 	}
 
 	document.querySelectorAll(".page-card-head .app-logo").forEach((logo) => {

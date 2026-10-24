@@ -106,6 +106,8 @@ def web_payload(settings) -> str:
 		"login_subline": settings.login_subline or "",
 		"has_login_image": 1 if settings.login_background else 0,
 		"copyright": get_copyright(),
+		"show_language_switcher": cint(settings.show_language_switcher),
+		"language": (getattr(frappe.local, "lang", None) or "en").split("-")[0],
 	}
 	# `</` cannot appear inside the JSON, so the element cannot be closed from within.
 	data = frappe.as_json(payload, indent=None).replace("</", "<\\/")

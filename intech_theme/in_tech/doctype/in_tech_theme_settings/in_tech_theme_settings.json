@@ -40,6 +40,8 @@
   "force_dark_mode",
   "typography_section",
   "font_family",
+  "language_section",
+  "show_language_switcher",
   "desk_tab",
   "desk_backdrop",
   "desk_background_image",
@@ -263,6 +265,18 @@
    "default": "Inter"
   },
   {
+   "fieldname": "language_section",
+   "fieldtype": "Section Break",
+   "label": "Language"
+  },
+  {
+   "fieldname": "show_language_switcher",
+   "fieldtype": "Check",
+   "label": "Show English / Arabic Switcher",
+   "default": "1",
+   "description": "A button on /desk, at the foot of the sidebar and on the login page that switches the interface between English and Arabic."
+  },
+  {
    "fieldname": "desk_tab",
    "fieldtype": "Tab Break",
    "label": "Desk Background"
@@ -359,7 +373,7 @@
  ],
  "issingle": 1,
  "links": [],
- "modified": "2026-10-24 12:00:00.000000",
+ "modified": "2026-10-24 18:00:00.000000",
  "modified_by": "Administrator",
  "module": "In Tech",
  "name": "In Tech Theme Settings",

@@ -105,6 +105,9 @@ def client_settings(settings) -> dict:
 		"menu_colors": menu_palette(settings.menu_palette),
 		"force_dark": cint(settings.force_dark_mode),
 		"font_family": settings.font_family if settings.font_family in FONTS else "Inter",
+		# the English / Arabic switcher, and the language the interface is in now
+		"show_language_switcher": cint(settings.show_language_switcher),
+		"language": (getattr(frappe.local, "lang", None) or "en").split("-")[0],
 		# /desk
 		"desk_backdrop": backdrop,
 		"desk_background_image": settings.desk_background_image or "",

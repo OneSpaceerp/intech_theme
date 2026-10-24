@@ -92,6 +92,28 @@ GLYPHS = {
 		<path d="M42 26h12v16h16v12H54v16H42V54H26V42h16Z"/>""",
 }
 
+# The In Tech mark itself, redrawn for the ERP's tile: the slanted T with its node, and the
+# circuit traces fanning out on either side in the logo's two blues. It brings its own
+# traces, so the corner set below is left off this one tile.
+INTECH_MARK = """
+	<g fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.8">
+		<g stroke="#8FD3FF">
+			<path d="M43 53 26 59.4"/><circle cx="23" cy="60.5" r="3"/>
+			<path d="M45 62 31 67.2"/><circle cx="28" cy="68.3" r="3"/>
+			<path d="M47 71 37 74.7"/><circle cx="34" cy="75.8" r="3"/>
+		</g>
+		<g stroke="#C3DFEC">
+			<path d="M64 41 75 36.9"/><circle cx="78" cy="35.8" r="3"/>
+			<path d="M66 50 79 45.1"/><circle cx="82" cy="44" r="3"/>
+			<path d="M68 59 78 55.3"/><circle cx="81" cy="54.2" r="3"/>
+			<path d="M52 24 63 19.9"/><circle cx="66" cy="18.8" r="3"/>
+		</g>
+		<path d="M20 47 76 26" stroke="#fff" stroke-width="8"/>
+		<path d="M45 41 52 76" stroke="#fff" stroke-width="6"/>
+		<path d="M54 38 61 73" stroke="#fff" stroke-width="6"/>
+	</g>
+	<circle cx="38" cy="32" r="5.2" fill="#fff"/>"""
+
 # The logo's circuit traces, small, in the tile's top right corner.
 TRACES = """
 	<g stroke="#fff" stroke-opacity=".28" stroke-width="2.4" fill="none" stroke-linecap="round">
@@ -102,7 +124,11 @@ TRACES = """
 
 def tile(identity: dict) -> str:
 	top, bottom = identity["colors"]
-	glyph = GLYPHS[identity["glyph"]]
+	if identity["glyph"] == "intech":
+		traces, glyph = "", ""
+		mark = INTECH_MARK
+	else:
+		traces, glyph, mark = TRACES, GLYPHS[identity["glyph"]], ""
 	return f"""<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" role="img" aria-label="{identity["title"]}">
 	<defs>
 		<linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
@@ -115,7 +141,7 @@ def tile(identity: dict) -> str:
 		</linearGradient>
 	</defs>
 	<rect width="96" height="96" rx="24" fill="url(#bg)"/>
-	<rect width="96" height="96" rx="24" fill="url(#sheen)"/>{TRACES}
+	<rect width="96" height="96" rx="24" fill="url(#sheen)"/>{traces}{mark}
 	<g stroke="#fff" stroke-width="4.5" fill="none" stroke-linecap="round" stroke-linejoin="round">{glyph}
 	</g>
 </svg>
@@ -126,8 +152,6 @@ def main() -> int:
 	OUT.mkdir(parents=True, exist_ok=True)
 	written = 0
 	for app, identity in palette.APP_IDENTITIES.items():
-		if identity["glyph"] == "brand":
-			continue  # the ERP wears the logo tile itself
 		(OUT / f"{app}.svg").write_text(tile(identity), encoding="utf-8")
 		written += 1
 	print(f"wrote {written} tiles to {OUT}")
