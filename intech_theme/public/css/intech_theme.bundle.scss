@@ -1,0 +1,15 @@
+/* In Tech — desk bundle.
+   =========================================================================
+   Every desk stylesheet, in the one order the cascade needs: tokens first,
+   so everything after reads them; the /desk page last, so its glass tiles
+   win over the generic card rules.
+
+   A bundle rather than raw paths in app_include_css: Frappe only gives a file
+   a content hash when its name contains ".bundle.", and without one browsers
+   and nginx kept the previous release's copy.
+   ========================================================================= */
+
+@import "./intech-tokens";
+@import "./intech-components";
+@import "./intech-sidebar";
+@import "./intech-desk";

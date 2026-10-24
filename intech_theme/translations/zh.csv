@@ -1,0 +1,52 @@
+&copy; Frappe Technologies Pvt. Ltd. and contributors,&copy; In Tech科技有限公司及贡献者
+"<div class=""well"">\n    Edit list of Series in the box. Rules:\n    <ul>\n        <li>Each Series Prefix on a new line.</li>\n        <li>Allowed special characters are ""/"" and ""-""</li>\n        <li>\n            Optionally, set the number of digits in the series using dot (.)\n            followed by hashes (#). For example, "".####"" means that the series\n            will have four digits. Default is five digits.\n        </li>\n        <li>\n            You can also use variables in the series name by putting them\n            between (.) dots\n            <br>\n            Supported Variables:\n            <ul>\n                <li><code>.YYYY.</code> - Year in 4 digits</li>\n                <li><code>.YY.</code> - Year in 2 digits</li>\n                <li><code>.MM.</code> - Month</li>\n                <li><code>.DD.</code> - Day of month</li>\n                <li><code>.WW.</code> - Week of the year</li>\n                <li>\n                    <code>.{fieldname}.</code> - fieldname on the document e.g.\n                    <code>branch</code>\n                </li>\n                <li><code>.FY.</code> - Fiscal Year (requires ERPNext to be installed)</li>\n                <li><code>.ABBR.</code> - Company Abbreviation (requires ERPNext to be installed)</li>\n            </ul>\n        </li>\n    </ul>\n    Examples:\n    <ul>\n        <li>INV-</li>\n        <li>INV-10-</li>\n        <li>INVK-</li>\n        <li>INV-.YYYY.-.{branch}.-.MM.-.####</li>\n    </ul>\n</div>\n<br>\n","<div class=""well"">\n    在框中编辑系列列表。规则：\n    <ul>\n        <li>每个系列前缀占一行。</li>\n        <li>允许的特殊字符为“/”和“-”</li>\n        <li>\n            可选地，使用点 (.)\n            后跟井号 (#) 来设置系列中的位数。例如，“.####”表示系列\n            将有四位数字。默认值为五位数字。\n        </li>\n        <li>\n            您还可以在系列名称中使用变量，方法是将它们放在\n            (.) 点之间\n            <br>\n            支持的变量：\n            <ul>\n                <li><code>.YYYY。</code> - 4 位数字的年份</li>\n                <li><code>.YY。</code> - 2 位数字的年份</li>\n                <li><code>.MM.</code> - 月份</li>\n                <li><code>.DD.</code> - 月份中的日期</li>\n                <li><code>.WW.</code> - 一年中的周数</li>\n                <li><code>.FY.</code> - 财政年度</li>\n                <li><code>.ABBR.</code> - 公司缩写</li>\n                <li>\n                    <code>.{fieldname}.</code> - 文档上的字段名称，例如\n                    <code>分支</code>\n                </li>\n            </ul>\n        </li>\n    </ul>\n    示例：\n    <ul>\n        <li>INV-</li>\n        <li>INV-10-</li>\n        <li>INVK-</li>\n        <li>INV-.YYYY.-.{branch}.-.MM.-.####</li>\n    </ul>\n</div>\n<br>\n"
+"A Frappe Framework instance can function as an OAuth Client, Resource, or Authorization server. This DocType contains settings related to all three.",In Tech实例可作为OAuth客户端、资源服务器或授权服务器运行。本文档类型包含与此三种角色相关的设置。
+Allowed Users is not required as Frappe CRM is already installed on the site.,Allowed Users is not required as In Tech CRM is already installed on the site.
+Allowed Users is required for data synchronization from remote Frappe CRM site.,Allowed Users is required for data synchronization from remote In Tech CRM site.
+Company Abbreviation (requires ERPNext to be installed),Company Abbreviation (requires In Tech to be installed)
+ERPNext,In Tech
+ERPNext Integrations,In Tech Integrations
+ERPNext Settings,In Tech设置
+ERPNext User ID,In Tech用户ID
+ERPNext will make a stock ledger entry for each transaction of this item. Keep unchecked for non-stock or service items.,In Tech 将为该物料的每笔交易生成一条物料凭证。对于非库存物料或服务物料，请保持不勾选。
+Enable Frappe CRM Data Synchronization,启用 In Tech CRM 数据同步
+"Enter static url parameters here (Eg. sender=ERPNext, username=ERPNext, password=1234 etc.)","请输入静态的URL参数(例如 sender=In Tech, username=In Tech, password=1234 etc.)"
+"Enter static url parameters here (Eg. sender=ERPNext, username=ERPNext, password=1234 etc.)","Enter static url parameters here (Eg. sender=In Tech, username=In Tech, password=1234 etc.)",SMS Settings
+Failed to request login to Frappe Cloud,请求登录In Tech云失败
+Fiscal Year (requires ERPNext to be installed),Fiscal Year (requires In Tech to be installed)
+Frappe,In Tech
+Frappe,In Tech,Social Login Key
+Frappe CRM,In Tech CRM
+Frappe CRM Allowed User,In Tech CRM 允许的用户
+Frappe CRM data synchronization is not enabled on ERPNext. Contact System Manager of ERPNext.,In Tech 未启用 In Tech CRM 数据同步。请联系 In Tech 的系统管理员。
+Frappe Framework,In Tech
+Frappe Framework Version,In Tech Version
+Frappe Light,In Tech Light主题
+Frappe Mail,In Tech邮件
+Frappe Mail OAuth Error,In Tech邮件OAuth错误
+Frappe Mail Site,In Tech邮件站点
+Frappe School,In Tech 学院
+Frappe Support,In Tech支持
+Frappe Technologies,In Tech
+Frappe Technologies Pvt. Ltd.,In Tech
+"Frappe no longer uses Gravatar because it can disclose hashed email addresses to a third-party service. To fully stop this behavior, existing Gravatar image URLs must be deleted.","In Tech no longer uses Gravatar because it can disclose hashed email addresses to a third-party service. To fully stop this behavior, existing Gravatar image URLs must be deleted."
+Frappe page builder using components,使用组件的In Tech页面构建器
+Get to know ERPNext,了解 In Tech
+"If this option is configured 'Yes', ERPNext will prevent you from creating a Purchase Invoice or Receipt without creating a Purchase Order first. This configuration can be overridden for a particular supplier by enabling the 'Allow Purchase Invoice Creation Without Purchase Order' checkbox in the Supplier master.",若配置为'是'，In Tech将阻止您先于采购订单创建采购发票或收货单。可在供应商主数据中勾选'允许无采购订单创建采购发票'覆盖此设置
+"If this option is configured 'Yes', ERPNext will prevent you from creating a Purchase Invoice without creating a Purchase Receipt first. This configuration can be overridden for a particular supplier by enabling the 'Allow Purchase Invoice Creation Without Purchase Receipt' checkbox in the Supplier master.",若配置为'是'，In Tech将阻止您先于采购收货单创建采购发票。可在供应商主数据中勾选'允许无采购收货单创建采购发票'覆盖此设置
+"If you are maintaining stock of this Item in your Inventory, ERPNext will make a stock ledger entry for each transaction of this item.",若在库存中维护此物料，In Tech将为每笔交易创建库存分类账分录
+Open Frappe CRM,Open In Tech CRM
+Open Frappe Helpdesk,Open In Tech Helpdesk
+Please add atleast one user on Allowed Users to allow Data Synchronization from Frappe CRM site.,Please add atleast one user on Allowed Users to allow Data Synchronization from In Tech CRM site.
+"SMS Settings.allowed_roles not found. Update the Frappe Framework app to a version that includes this field, then re-run bench migrate.",未找到 SMS Settings.allowed_roles。请将 In Tech 应用更新到包含此字段的版本，然后重新运行 bench migrate。
+"Something you bought before using ERPNext, with what you paid, where it is, and how much has already depreciated. See [Asset](https://docs.frappe.io/erpnext/user/manual/en/asset).",您在使用 In Tech 之前购买的物品，包括已付金额、存放位置以及已折旧的金额。请参阅 [资产](https://docs.frappe.io/erpnext/user/manual/en/asset)。
+Starting Frappe ...,开始In Tech ...
+Switch to Frappe CRM,切换到 In Tech CRM
+This action will unlink this account from any external service integrating ERPNext with your bank accounts. It cannot be undone. Are you certain ?,此操作将取消此账户与将In Tech与您的银行账户集成的任何外部服务的链接。它无法撤销。你确定吗 ？
+Update from Frappe Cloud,从In Tech云更新
+User not allowed to synchronize data from Frappe CRM on ERPNext. Contact System Manager of ERPNext.,用户无权将 In Tech CRM 中的数据同步到 In Tech。请联系 In Tech 的系统管理员。
+Validate Frappe Mail Settings,验证In Tech邮件设置
+Visit Frappe Support Portal,Visit In Tech Support Portal
+"WARNING: Exotel app has been separated from ERPNext, please install the app to continue using Exotel integration.",警告：Exotel应用已从In Tech分离，请安装该应用以继续使用Exotel集成
+Welcome to Frappe!,欢迎使用 In Tech！
+[Important] [ERPNext] Auto Reorder Errors,[重要][In Tech]自动补货错误

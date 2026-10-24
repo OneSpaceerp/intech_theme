@@ -1,0 +1,52 @@
+&copy; Frappe Technologies Pvt. Ltd. and contributors,&copy; In Tech และผู้ร่วมพัฒนา
+"<div class=""well"">\n    Edit list of Series in the box. Rules:\n    <ul>\n        <li>Each Series Prefix on a new line.</li>\n        <li>Allowed special characters are ""/"" and ""-""</li>\n        <li>\n            Optionally, set the number of digits in the series using dot (.)\n            followed by hashes (#). For example, "".####"" means that the series\n            will have four digits. Default is five digits.\n        </li>\n        <li>\n            You can also use variables in the series name by putting them\n            between (.) dots\n            <br>\n            Supported Variables:\n            <ul>\n                <li><code>.YYYY.</code> - Year in 4 digits</li>\n                <li><code>.YY.</code> - Year in 2 digits</li>\n                <li><code>.MM.</code> - Month</li>\n                <li><code>.DD.</code> - Day of month</li>\n                <li><code>.WW.</code> - Week of the year</li>\n                <li>\n                    <code>.{fieldname}.</code> - fieldname on the document e.g.\n                    <code>branch</code>\n                </li>\n                <li><code>.FY.</code> - Fiscal Year (requires ERPNext to be installed)</li>\n                <li><code>.ABBR.</code> - Company Abbreviation (requires ERPNext to be installed)</li>\n            </ul>\n        </li>\n    </ul>\n    Examples:\n    <ul>\n        <li>INV-</li>\n        <li>INV-10-</li>\n        <li>INVK-</li>\n        <li>INV-.YYYY.-.{branch}.-.MM.-.####</li>\n    </ul>\n</div>\n<br>\n","<div class=""well"">\n    แก้ไขรายการชุดในกล่อง กฎ:\n    <ul>\n        <li>แต่ละคำนำหน้ารุ่นให้อยู่ในบรรทัดใหม่</li>\n        <li>อนุญาตให้ใช้ตัวอักขระพิเศษได้คือ ""/"" และ ""-""</li>\n        <li>\n            ตามต้องการ ให้ตั้งค่าจำนวนหลักในชุดตัวเลขโดยใช้จุด (.)\n            ตามด้วยเครื่องหมายแฮช (#) ตัวอย่างเช่น "".####"" หมายความว่าชุดตัวเลข\n            จะมีสี่หลัก ค่าเริ่มต้นคือห้าหลัก\n        </li>\n        <li>\n\n            <br>\n            คุณยังสามารถใช้ตัวแปรในชื่อชุดข้อมูลได้โดยการใส่ตัวแปรไว้ระหว่างจุด (.) ตามตัวอย่างนี้:\n            ตัวแปรที่รองรับ:\n            <ul>\n                <li><code>.YYYY.</code>- ปีใน 4 หลัก</li>\n                <li><code>.YY.</code>- ปีใน 2 หลัก</li>\n                <li><code>.MM.</code>- เดือน</li>\n                <li><code>.DD.</code>- วันที่ของเดือน</li>\n                <li><code>.WW.</code>- สัปดาห์ของปี</li>\n                <li>\n                    <code>.{fieldname}.</code>- ชื่อฟิลด์ในเอกสาร เช่น\n                    <code>                    สาขา</code>\n                </li>\n                <li><code>.FY.</code>- ปีงบประมาณ (ต้องติดตั้ง In Tech ก่อน)</li>\n                <li><code>.ABBR.</code>- ชื่อย่อบริษัท (ต้องติดตั้ง In Tech ก่อน)</li>\n            </ul>\n        </li>\n    </ul>\n    ตัวอย่าง:\n    <ul>\n        <li>INV-</li>\n        <li>INV-10-</li>\n        <li>INVK-</li>\n        <li>INV-.YYYY.-.{branch}.-.MM.-.####</li>\n    </ul>\n</div>\n<br>\n"
+"A Frappe Framework instance can function as an OAuth Client, Resource, or Authorization server. This DocType contains settings related to all three.","อินสแตนซ์ของเฟรมเวิร์ก In Tech สามารถทำหน้าที่เป็นไคลเอนต์ OAuth, รีซอร์ส หรือเซิร์ฟเวอร์การอนุญาตได้ เอกสารประเภทนี้ประกอบด้วยค่าการตั้งค่าที่เกี่ยวข้องกับทั้งสามประเภท"
+Allowed Users is not required as Frappe CRM is already installed on the site.,Allowed Users is not required as In Tech CRM is already installed on the site.
+Allowed Users is required for data synchronization from remote Frappe CRM site.,Allowed Users is required for data synchronization from remote In Tech CRM site.
+Company Abbreviation (requires ERPNext to be installed),Company Abbreviation (requires In Tech to be installed)
+ERPNext,เออีอาร์พีเน็กซ์
+ERPNext Integrations,In Tech Integrations
+ERPNext Settings,การตั้งค่า In Tech
+ERPNext User ID,รหัสผู้ใช้ In Tech
+ERPNext will make a stock ledger entry for each transaction of this item. Keep unchecked for non-stock or service items.,In Tech จะสร้างรายการบัญชีแยกประเภทสต็อกสำหรับธุรกรรมแต่ละรายการของสินค้านี้ สำหรับสินค้าที่ไม่ใช่สต็อกหรือรายการบริการ ให้ปล่อยไม่เลือกไว้
+Enable Frappe CRM Data Synchronization,เปิดใช้งานการซิงโครไนซ์ข้อมูล In Tech CRM
+"Enter static url parameters here (Eg. sender=ERPNext, username=ERPNext, password=1234 etc.)","ป้อนพารามิเตอร์ URL แบบคงที่ที่นี่ (เช่น sender=In Tech, username=In Tech, password=1234 เป็นต้น)"
+"Enter static url parameters here (Eg. sender=ERPNext, username=ERPNext, password=1234 etc.)","Enter static url parameters here (Eg. sender=In Tech, username=In Tech, password=1234 etc.)",SMS Settings
+Failed to request login to Frappe Cloud,ล้มเหลวในการร้องขอเข้าสู่ระบบ In Tech Cloud
+Fiscal Year (requires ERPNext to be installed),Fiscal Year (requires In Tech to be installed)
+Frappe,ฟรัปเป้
+Frappe,In Tech,Social Login Key
+Frappe CRM,In Tech CRM
+Frappe CRM Allowed User,ผู้ใช้ที่ได้รับอนุญาตของ In Tech CRM
+Frappe CRM data synchronization is not enabled on ERPNext. Contact System Manager of ERPNext.,ยังไม่ได้เปิดใช้งานการซิงโครไนซ์ข้อมูล In Tech CRM บน In Tech กรุณาติดต่อผู้จัดการระบบของ In Tech
+Frappe Framework,In Tech
+Frappe Framework Version,In Tech Version
+Frappe Light,ฟรัปเป้ไลท์
+Frappe Mail,ฟรัปเป้เมล
+Frappe Mail OAuth Error,ข้อผิดพลาด OAuth ของฟรัปเป้เมล
+Frappe Mail Site,ไซต์ฟรัปเป้เมล
+Frappe School,โรงเรียนแฟรปเป้
+Frappe Support,การสนับสนุนฟรัปเป้
+Frappe Technologies,In Tech
+Frappe Technologies Pvt. Ltd.,In Tech
+"Frappe no longer uses Gravatar because it can disclose hashed email addresses to a third-party service. To fully stop this behavior, existing Gravatar image URLs must be deleted.","In Tech no longer uses Gravatar because it can disclose hashed email addresses to a third-party service. To fully stop this behavior, existing Gravatar image URLs must be deleted."
+Frappe page builder using components,ตัวสร้างหน้าฟรัปเป้โดยใช้คอมโพเนนต์
+Get to know ERPNext,ทำความรู้จัก In Tech
+"If this option is configured 'Yes', ERPNext will prevent you from creating a Purchase Invoice or Receipt without creating a Purchase Order first. This configuration can be overridden for a particular supplier by enabling the 'Allow Purchase Invoice Creation Without Purchase Order' checkbox in the Supplier master.",หากตัวเลือกนี้ถูกตั้งค่าเป็น 'ใช่' In Tech จะป้องกันไม่ให้คุณสร้างใบแจ้งหนี้ซื้อหรือใบรับซื้อโดยไม่สร้างใบสั่งซื้อก่อน การตั้งค่านี้สามารถแทนที่ได้สำหรับผู้จัดจำหน่ายเฉพาะโดยเปิดใช้งานช่องทำเครื่องหมาย 'อนุญาตการสร้างใบแจ้งหนี้ซื้อโดยไม่มีใบสั่งซื้อ' ในมาสเตอร์ผู้จัดจำหน่าย
+"If this option is configured 'Yes', ERPNext will prevent you from creating a Purchase Invoice without creating a Purchase Receipt first. This configuration can be overridden for a particular supplier by enabling the 'Allow Purchase Invoice Creation Without Purchase Receipt' checkbox in the Supplier master.",หากตัวเลือกนี้ถูกตั้งค่าเป็น 'ใช่' In Tech จะป้องกันไม่ให้คุณสร้างใบแจ้งหนี้ซื้อโดยไม่สร้างใบรับซื้อก่อน การตั้งค่านี้สามารถแทนที่ได้สำหรับผู้จัดจำหน่ายเฉพาะโดยเปิดใช้งานช่องทำเครื่องหมาย 'อนุญาตการสร้างใบแจ้งหนี้ซื้อโดยไม่มีใบรับซื้อ' ในมาสเตอร์ผู้จัดจำหน่าย
+"If you are maintaining stock of this Item in your Inventory, ERPNext will make a stock ledger entry for each transaction of this item.",หากคุณเก็บสต็อกของรายการนี้ในสินค้าคงคลังของคุณ In Tech จะสร้างรายการบัญชีสต็อกสำหรับแต่ละธุรกรรมของรายการนี้
+Open Frappe CRM,Open In Tech CRM
+Open Frappe Helpdesk,Open In Tech Helpdesk
+Please add atleast one user on Allowed Users to allow Data Synchronization from Frappe CRM site.,Please add atleast one user on Allowed Users to allow Data Synchronization from In Tech CRM site.
+"SMS Settings.allowed_roles not found. Update the Frappe Framework app to a version that includes this field, then re-run bench migrate.",ไม่พบ SMS Settings.allowed_roles โปรดอัปเดตแอป In Tech เป็นเวอร์ชันที่มีฟิลด์นี้ แล้วรัน bench migrate อีกครั้ง
+"Something you bought before using ERPNext, with what you paid, where it is, and how much has already depreciated. See [Asset](https://docs.frappe.io/erpnext/user/manual/en/asset).",สิ่งที่คุณซื้อก่อนใช้ In Tech พร้อมราคาที่จ่ายไป ตำแหน่งที่จัดเก็บ และมูลค่าที่ตัดค่าเสื่อมราคาไปแล้ว ดูที่ [สินทรัพย์](https://docs.frappe.io/erpnext/user/manual/en/asset)
+Starting Frappe ...,เริ่มทำแฟรปเป้ ...
+Switch to Frappe CRM,สลับไปยัง In Tech CRM
+This action will unlink this account from any external service integrating ERPNext with your bank accounts. It cannot be undone. Are you certain ?,การกระทำนี้จะยกเลิกการเชื่อมโยงบัญชีนี้จากบริการภายนอกที่รวม In Tech กับบัญชีธนาคารของคุณ ไม่สามารถย้อนกลับได้ คุณแน่ใจหรือไม่?
+Update from Frappe Cloud,อัปเดตจาก In Tech Cloud
+User not allowed to synchronize data from Frappe CRM on ERPNext. Contact System Manager of ERPNext.,ผู้ใช้ไม่ได้รับอนุญาตให้ซิงโครไนซ์ข้อมูลจาก In Tech CRM ไปยัง In Tech โปรดติดต่อผู้จัดการระบบของ In Tech
+Validate Frappe Mail Settings,ตรวจสอบการตั้งค่าอีเมล In Tech
+Visit Frappe Support Portal,Visit In Tech Support Portal
+"WARNING: Exotel app has been separated from ERPNext, please install the app to continue using Exotel integration.",คำเตือน: แอป Exotel ถูกแยกออกจาก In Tech โปรดติดตั้งแอปเพื่อใช้การรวม Exotel ต่อไป
+Welcome to Frappe!,ยินดีต้อนรับสู่ In Tech!
+[Important] [ERPNext] Auto Reorder Errors,[สำคัญ] [In Tech] ข้อผิดพลาดการสั่งซื้ออัตโนมัติ

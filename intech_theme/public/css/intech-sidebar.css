@@ -1,0 +1,305 @@
+/* In Tech — sidebar, dock and the colourful menus.
+   =========================================================================
+   Three sidebar surfaces (html[data-intech-sidebar]):
+     navy      the brand ink, white text — the default
+     gradient  ink into deep blue, with the logo's circuit traces at the foot
+     light     the logo tile's ice blue, ink text
+
+   Colourful menus (html[data-intech-menus="colorful"]): every row's glyph sits
+   on a filled chip, and the chips take the eight menu hues in turn, so
+   neighbouring rows never share a colour. The hue is chosen by position
+   (nth-child), which needs no script and survives every re-render the
+   sidebar does on route change.
+
+   Selectors start at html[data-intech] so they outrank Frappe's own
+   `.body-sidebar .standard-sidebar-item` rules without !important.
+   ========================================================================= */
+
+/* ---- Surfaces ---------------------------------------------------------- */
+html[data-intech-sidebar="navy"],
+html[data-intech-sidebar="gradient"] {
+	--it-side-bg: var(--it-ink);
+	--it-side-ink: rgba(236, 242, 252, 0.86);
+	--it-side-ink-strong: #ffffff;
+	--it-side-muted: rgba(195, 223, 236, 0.62);
+	--it-side-hover: rgba(255, 255, 255, 0.07);
+	--it-side-active: rgba(255, 255, 255, 0.12);
+	--it-side-border: rgba(255, 255, 255, 0.08);
+}
+
+html[data-intech-sidebar="gradient"] {
+	--it-side-bg: var(--it-gradient-ink);
+}
+
+html[data-intech-sidebar="light"] {
+	--it-side-bg: linear-gradient(180deg, var(--it-frost) 0%, #e3eff7 100%);
+	--it-side-ink: #2a3358;
+	--it-side-ink-strong: var(--it-ink);
+	--it-side-muted: #5f7896;
+	--it-side-hover: rgba(36, 114, 174, 0.08);
+	--it-side-active: #ffffff;
+	--it-side-border: rgba(30, 36, 72, 0.09);
+}
+
+html[data-intech-sidebar="light"][data-theme="dark"] {
+	--it-side-bg: linear-gradient(180deg, #151c38 0%, #10162d 100%);
+	--it-side-ink: rgba(236, 242, 252, 0.86);
+	--it-side-ink-strong: #ffffff;
+	--it-side-muted: rgba(195, 223, 236, 0.6);
+	--it-side-hover: rgba(255, 255, 255, 0.06);
+	--it-side-active: rgba(255, 255, 255, 0.1);
+	--it-side-border: rgba(255, 255, 255, 0.07);
+}
+
+html[data-intech] {
+	--desk-sidebar-bg: var(--it-ink);
+}
+
+html[data-intech] .body-sidebar {
+	background: var(--it-side-bg);
+	border-right-color: var(--it-side-border);
+	color: var(--it-side-ink);
+	--icon-stroke: currentColor;
+	--ink-gray-5: var(--it-side-muted);
+	--ink-gray-6: var(--it-side-muted);
+	--ink-gray-7: var(--it-side-ink);
+	--ink-gray-8: var(--it-side-ink-strong);
+	--ink-gray-9: var(--it-side-ink-strong);
+	--text-color: var(--it-side-ink);
+	--text-muted: var(--it-side-muted);
+	--outline-gray-1: var(--it-side-border);
+	--surface-gray-2: var(--it-side-hover);
+	--surface-gray-3: var(--it-side-hover);
+}
+
+/* The logo's traces, faint, behind the foot of the gradient sidebar. */
+html[data-intech-sidebar="gradient"] .body-sidebar::after {
+	content: "";
+	position: absolute;
+	inset: auto 0 0 0;
+	height: 220px;
+	pointer-events: none;
+	opacity: 0.16;
+	background: url("/assets/intech_theme/images/backdrops/circuit-corner.svg") no-repeat right bottom / 260px auto;
+}
+
+html[data-intech] .body-sidebar .sidebar-header,
+html[data-intech] .body-sidebar .header-title,
+html[data-intech] .body-sidebar .avatar-name-email span {
+	color: var(--it-side-ink-strong);
+}
+
+html[data-intech] .body-sidebar .avatar-name-email span + span {
+	color: var(--it-side-muted);
+}
+
+html[data-intech] .body-sidebar .sidebar-header:hover,
+html[data-intech] .body-sidebar .sidebar-user-button:hover {
+	background: var(--it-side-hover);
+}
+
+html[data-intech] .body-sidebar .header-logo img {
+	border-radius: 8px;
+}
+
+/* ---- Rows -------------------------------------------------------------- */
+html[data-intech] .body-sidebar .standard-sidebar-item .item-anchor {
+	color: var(--it-side-ink);
+}
+
+html[data-intech] .body-sidebar .standard-sidebar-item:not(.active-sidebar):has(a:not(.section-break)):hover {
+	background: var(--it-side-hover);
+}
+
+html[data-intech] .body-sidebar .standard-sidebar-item.active-sidebar {
+	background: var(--it-side-active);
+	box-shadow: none;
+	position: relative;
+}
+
+html[data-intech] .body-sidebar .standard-sidebar-item.active-sidebar .item-anchor {
+	color: var(--it-side-ink-strong);
+	font-weight: 600;
+}
+
+/* A bar of the row's own colour at its leading edge marks where you are. */
+html[data-intech] .body-sidebar .standard-sidebar-item.active-sidebar::before {
+	content: "";
+	position: absolute;
+	inset-inline-start: -6px;
+	top: 6px;
+	bottom: 6px;
+	width: 3px;
+	border-radius: 3px;
+	background: var(--it-hue, var(--it-accent));
+}
+
+html[data-intech] .body-sidebar .section-break .sidebar-item-label {
+	color: var(--it-side-muted);
+	text-transform: uppercase;
+	font-size: 10.5px;
+	font-weight: 600;
+	letter-spacing: 0.09em;
+}
+
+/* ---- Colourful chips --------------------------------------------------- */
+html[data-intech-menus="colorful"] .body-sidebar .sidebar-item-container:nth-child(8n + 1) { --it-hue: var(--it-m1); }
+html[data-intech-menus="colorful"] .body-sidebar .sidebar-item-container:nth-child(8n + 2) { --it-hue: var(--it-m2); }
+html[data-intech-menus="colorful"] .body-sidebar .sidebar-item-container:nth-child(8n + 3) { --it-hue: var(--it-m3); }
+html[data-intech-menus="colorful"] .body-sidebar .sidebar-item-container:nth-child(8n + 4) { --it-hue: var(--it-m4); }
+html[data-intech-menus="colorful"] .body-sidebar .sidebar-item-container:nth-child(8n + 5) { --it-hue: var(--it-m5); }
+html[data-intech-menus="colorful"] .body-sidebar .sidebar-item-container:nth-child(8n + 6) { --it-hue: var(--it-m6); }
+html[data-intech-menus="colorful"] .body-sidebar .sidebar-item-container:nth-child(8n + 7) { --it-hue: var(--it-m7); }
+html[data-intech-menus="colorful"] .body-sidebar .sidebar-item-container:nth-child(8n + 8) { --it-hue: var(--it-m8); }
+
+html[data-intech-menus="colorful"] .body-sidebar .sidebar-item-icon {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	flex: 0 0 auto;
+	width: 24px;
+	height: 24px;
+	margin-inline-start: -4px;
+	border-radius: 7px;
+	color: #ffffff;
+	--icon-stroke: #ffffff;
+	background: linear-gradient(145deg, color-mix(in srgb, var(--it-hue) 82%, #ffffff) 0%, var(--it-hue) 100%);
+	box-shadow: 0 3px 8px -3px color-mix(in srgb, var(--it-hue) 75%, transparent),
+		inset 0 1px 0 rgba(255, 255, 255, 0.25);
+	transition: transform 0.15s ease;
+}
+
+html[data-intech-menus="colorful"] .body-sidebar .sidebar-item-icon svg {
+	width: 14px;
+	height: 14px;
+}
+
+html[data-intech-menus="colorful"] .body-sidebar .standard-sidebar-item:hover .sidebar-item-icon {
+	transform: translateY(-1px) scale(1.05);
+}
+
+/* Nested rows: an outlined dot in the parent's hue instead of a second chip. */
+html[data-intech-menus="colorful"] .body-sidebar .nested-container .sidebar-item-icon {
+	width: 20px;
+	height: 20px;
+	background: color-mix(in srgb, var(--it-hue) 22%, transparent);
+	color: var(--it-hue);
+	--icon-stroke: currentColor;
+	box-shadow: none;
+}
+
+html[data-intech-menus="colorful"][data-intech-sidebar="navy"] .body-sidebar .nested-container .sidebar-item-icon,
+html[data-intech-menus="colorful"][data-intech-sidebar="gradient"] .body-sidebar .nested-container .sidebar-item-icon {
+	color: color-mix(in srgb, var(--it-hue) 55%, #ffffff);
+}
+
+/* The active row's label borrows a little of its hue. */
+html[data-intech-menus="colorful"] .body-sidebar .standard-sidebar-item.active-sidebar {
+	background: linear-gradient(90deg, color-mix(in srgb, var(--it-hue) 26%, transparent) 0%, var(--it-side-active) 100%);
+}
+
+html[data-intech-menus="colorful"][data-intech-sidebar="light"] .body-sidebar .standard-sidebar-item.active-sidebar {
+	background: linear-gradient(90deg, color-mix(in srgb, var(--it-hue) 14%, #ffffff) 0%, #ffffff 100%);
+	box-shadow: 0 2px 10px -6px rgba(30, 36, 72, 0.35);
+}
+
+/* Plain menus still get the brand blue on the active glyph. */
+html[data-intech-menus="plain"] .body-sidebar .standard-sidebar-item.active-sidebar .sidebar-item-icon {
+	color: var(--it-accent);
+}
+
+/* ---- Dock -------------------------------------------------------------- */
+html[data-intech] .dock {
+	--dock-bg: var(--it-ink);
+	--dock-ink: rgba(236, 242, 252, 0.78);
+	--dock-ink-strong: #ffffff;
+	--dock-tile-active: rgba(255, 255, 255, 0.14);
+	background: var(--it-gradient-ink);
+	border-color: rgba(255, 255, 255, 0.08);
+}
+
+html[data-intech-menus="colorful"] .dock .dock-items > .dock-item:nth-child(8n + 1) { --it-hue: var(--it-m1); }
+html[data-intech-menus="colorful"] .dock .dock-items > .dock-item:nth-child(8n + 2) { --it-hue: var(--it-m2); }
+html[data-intech-menus="colorful"] .dock .dock-items > .dock-item:nth-child(8n + 3) { --it-hue: var(--it-m3); }
+html[data-intech-menus="colorful"] .dock .dock-items > .dock-item:nth-child(8n + 4) { --it-hue: var(--it-m4); }
+html[data-intech-menus="colorful"] .dock .dock-items > .dock-item:nth-child(8n + 5) { --it-hue: var(--it-m5); }
+html[data-intech-menus="colorful"] .dock .dock-items > .dock-item:nth-child(8n + 6) { --it-hue: var(--it-m6); }
+html[data-intech-menus="colorful"] .dock .dock-items > .dock-item:nth-child(8n + 7) { --it-hue: var(--it-m7); }
+html[data-intech-menus="colorful"] .dock .dock-items > .dock-item:nth-child(8n + 8) { --it-hue: var(--it-m8); }
+
+html[data-intech-menus="colorful"] .dock .dock-items > .dock-item {
+	color: color-mix(in srgb, var(--it-hue) 50%, #ffffff);
+}
+
+html[data-intech-menus="colorful"] .dock .dock-items > .dock-item:hover {
+	background: color-mix(in srgb, var(--it-hue) 22%, transparent);
+	color: #ffffff;
+}
+
+html[data-intech-menus="colorful"] .dock .dock-items > .dock-item.active {
+	background: linear-gradient(145deg, color-mix(in srgb, var(--it-hue) 80%, #ffffff), var(--it-hue));
+	color: #ffffff;
+	box-shadow: 0 6px 14px -6px color-mix(in srgb, var(--it-hue) 80%, transparent);
+}
+
+html[data-intech] .dock .dock-logo .header-logo img {
+	border-radius: 10px;
+}
+
+/* ---- Navbar (pages without the sidebar header) ------------------------- */
+html[data-intech] .navbar {
+	background: color-mix(in srgb, var(--bg-color, #fff) 88%, transparent);
+	backdrop-filter: saturate(1.4) blur(10px);
+	border-bottom: 1px solid color-mix(in srgb, var(--it-steel) 22%, transparent);
+}
+
+/* ---- Dropdown menus ---------------------------------------------------- */
+/* The user menu, page menus and the avatar menu on /desk: each row's glyph in
+   its own hue, the hovered row tinted with it. */
+html[data-intech-menus="colorful"] .dropdown-menu .dropdown-item:nth-child(8n + 1),
+html[data-intech-menus="colorful"] .es-menu .es-menu__item:nth-child(8n + 1) { --it-hue: var(--it-m1); }
+html[data-intech-menus="colorful"] .dropdown-menu .dropdown-item:nth-child(8n + 2),
+html[data-intech-menus="colorful"] .es-menu .es-menu__item:nth-child(8n + 2) { --it-hue: var(--it-m2); }
+html[data-intech-menus="colorful"] .dropdown-menu .dropdown-item:nth-child(8n + 3),
+html[data-intech-menus="colorful"] .es-menu .es-menu__item:nth-child(8n + 3) { --it-hue: var(--it-m3); }
+html[data-intech-menus="colorful"] .dropdown-menu .dropdown-item:nth-child(8n + 4),
+html[data-intech-menus="colorful"] .es-menu .es-menu__item:nth-child(8n + 4) { --it-hue: var(--it-m4); }
+html[data-intech-menus="colorful"] .dropdown-menu .dropdown-item:nth-child(8n + 5),
+html[data-intech-menus="colorful"] .es-menu .es-menu__item:nth-child(8n + 5) { --it-hue: var(--it-m5); }
+html[data-intech-menus="colorful"] .dropdown-menu .dropdown-item:nth-child(8n + 6),
+html[data-intech-menus="colorful"] .es-menu .es-menu__item:nth-child(8n + 6) { --it-hue: var(--it-m6); }
+html[data-intech-menus="colorful"] .dropdown-menu .dropdown-item:nth-child(8n + 7),
+html[data-intech-menus="colorful"] .es-menu .es-menu__item:nth-child(8n + 7) { --it-hue: var(--it-m7); }
+html[data-intech-menus="colorful"] .dropdown-menu .dropdown-item:nth-child(8n + 8),
+html[data-intech-menus="colorful"] .es-menu .es-menu__item:nth-child(8n + 8) { --it-hue: var(--it-m8); }
+
+html[data-intech-menus="colorful"] .dropdown-menu .dropdown-item svg,
+html[data-intech-menus="colorful"] .es-menu .es-menu__item svg {
+	color: var(--it-hue);
+	--icon-stroke: var(--it-hue);
+}
+
+html[data-intech-menus="colorful"] .dropdown-menu .dropdown-item:hover,
+html[data-intech-menus="colorful"] .es-menu .es-menu__item:hover {
+	background: color-mix(in srgb, var(--it-hue) 11%, transparent);
+}
+
+html[data-intech] .dropdown-menu,
+html[data-intech] .es-menu {
+	border-radius: 12px;
+	border-color: color-mix(in srgb, var(--it-steel) 25%, transparent);
+	box-shadow: 0 18px 40px -18px rgba(30, 36, 72, 0.45);
+}
+
+/* ---- Mobile drawer ----------------------------------------------------- */
+@media (max-width: 767px) {
+	html[data-intech] .body-sidebar {
+		box-shadow: 0 0 40px rgba(10, 14, 30, 0.45);
+	}
+}
+
+@media (prefers-reduced-motion: reduce) {
+	html[data-intech] .body-sidebar .sidebar-item-icon {
+		transition: none;
+	}
+}

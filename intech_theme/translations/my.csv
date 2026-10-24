@@ -1,0 +1,52 @@
+&copy; Frappe Technologies Pvt. Ltd. and contributors,&copy; In Tech နှင့် ပူးပေါင်းလုပ်ဆောင်သူများ
+"<div class=""well"">\n    Edit list of Series in the box. Rules:\n    <ul>\n        <li>Each Series Prefix on a new line.</li>\n        <li>Allowed special characters are ""/"" and ""-""</li>\n        <li>\n            Optionally, set the number of digits in the series using dot (.)\n            followed by hashes (#). For example, "".####"" means that the series\n            will have four digits. Default is five digits.\n        </li>\n        <li>\n            You can also use variables in the series name by putting them\n            between (.) dots\n            <br>\n            Supported Variables:\n            <ul>\n                <li><code>.YYYY.</code> - Year in 4 digits</li>\n                <li><code>.YY.</code> - Year in 2 digits</li>\n                <li><code>.MM.</code> - Month</li>\n                <li><code>.DD.</code> - Day of month</li>\n                <li><code>.WW.</code> - Week of the year</li>\n                <li>\n                    <code>.{fieldname}.</code> - fieldname on the document e.g.\n                    <code>branch</code>\n                </li>\n                <li><code>.FY.</code> - Fiscal Year (requires ERPNext to be installed)</li>\n                <li><code>.ABBR.</code> - Company Abbreviation (requires ERPNext to be installed)</li>\n            </ul>\n        </li>\n    </ul>\n    Examples:\n    <ul>\n        <li>INV-</li>\n        <li>INV-10-</li>\n        <li>INVK-</li>\n        <li>INV-.YYYY.-.{branch}.-.MM.-.####</li>\n    </ul>\n</div>\n<br>\n","<div class=""well"">\n    အကွက်ထဲတွင် စီးရီးစာရင်းကို တည်းဖြတ်ပါ။ စည်းမျဉ်းများ-\n    <ul>\n        <li>စီးရီး ရှေ့ဆက်တစ်ခုစီကို စာကြောင်းအသစ်တွင် ထားပါ။</li>\n        <li>ခွင့်ပြုထားသော အထူးအက္ခရာများမှာ ""/"" နှင့် ""-"" ဖြစ်သည်</li>\n        <li>\n            ရွေးချယ်နိုင်သည့်အနေဖြင့်၊ အစက် (.)\n            နောက်တွင် အမှတ်အသားများ (#) ဖြင့် စီးရီးရှိ ဂဏန်းအရေအတွက်ကို သတ်မှတ်ပါ။ ဥပမာ၊ "".####"" ဆိုသည်မှာ စီးရီးတွင်\n            ဂဏန်း လေးလုံးပါမည်ဟု ဆိုလိုသည်။ ပုံသေမှာ ဂဏန်းငါးလုံးဖြစ်သည်။\n        </li>\n        <li>\n            စီးရီးအမည်တွင် ကိန်းရှင်များကို (.) အစက်များကြားတွင်\n            ထည့်သွင်း၍ အသုံးပြုနိုင်သည်\n            <br>\n            ပံ့ပိုးထားသော ကိန်းရှင်များ-\n            <ul>\n                <li><code>.YYYY.</code> - ဂဏန်း 4 လုံးဖြင့် နှစ်</li>\n                <li><code>.YY.</code> - ဂဏန်း 2 လုံးဖြင့် နှစ်</li>\n                <li><code>.MM.</code> - လ</li>\n                <li><code>.DD.</code> - လ၏ရက်</li>\n                <li><code>.WW.</code> - နှစ်၏ အပတ်</li>\n                <li>\n                    <code>.{fieldname}.</code> - စာရွက်စာတမ်းပေါ်ရှိ အကွက်အမည် ဥပမာ\n                    <code>branch</code>\n                </li>\n                <li><code>.FY.</code> - ဘဏ္ဍာရေးနှစ် (In Tech ထည့်သွင်းထားရန် လိုအပ်သည်)</li>\n                <li><code>.ABBR.</code> - ကုမ္ပဏီအတိုကောက် (In Tech ထည့်သွင်းထားရန် လိုအပ်သည်)</li>\n            </ul>\n        </li>\n    </ul>\n    ဥပမာများ-\n    <ul>\n        <li>INV-</li>\n        <li>INV-10-</li>\n        <li>INVK-</li>\n        <li>INV-.YYYY.-.{branch}.-.MM.-.####</li>\n    </ul>\n</div>\n<br>\n"
+"A Frappe Framework instance can function as an OAuth Client, Resource, or Authorization server. This DocType contains settings related to all three.",In Tech instance တစ်ခုသည် OAuth Client၊ Resource သို့မဟုတ် Authorization server အဖြစ် လုပ်ဆောင်နိုင်သည်။ ဤ DocType တွင် သုံးခုလုံးနှင့်ဆက်စပ်သော ဆက်တင်များ ပါဝင်သည်။
+Allowed Users is not required as Frappe CRM is already installed on the site.,Allowed Users is not required as In Tech CRM is already installed on the site.
+Allowed Users is required for data synchronization from remote Frappe CRM site.,Allowed Users is required for data synchronization from remote In Tech CRM site.
+Company Abbreviation (requires ERPNext to be installed),Company Abbreviation (requires In Tech to be installed)
+ERPNext,In Tech
+ERPNext Integrations,In Tech Integrations
+ERPNext Settings,In Tech ဆက်တင်များ
+ERPNext User ID,In Tech အသုံးပြုသူ ID
+ERPNext will make a stock ledger entry for each transaction of this item. Keep unchecked for non-stock or service items.,ဤပစ္စည်း၏ ငွေပေးငွေယူတိုင်းအတွက် In Tech သည် စတော့လယ်ဂျာ ထည့်သွင်းချက်ကို ပြုလုပ်ပါမည်။ စတော့မဟုတ်သော သို့မဟုတ် ဝန်ဆောင်မှုပစ္စည်းများအတွက် အမှန်ခြစ်မထားပါနှင့်။
+Enable Frappe CRM Data Synchronization,In Tech CRM ဒေတာ ထပ်တူပြုခြင်းကို ဖွင့်မည်
+"Enter static url parameters here (Eg. sender=ERPNext, username=ERPNext, password=1234 etc.)","ပုံသေ URL ဘောင်များကို ဤနေရာတွင် ထည့်သွင်းပါ (ဥပမာ sender=In Tech, username=In Tech, password=1234 စသည်)"
+"Enter static url parameters here (Eg. sender=ERPNext, username=ERPNext, password=1234 etc.)","Enter static url parameters here (Eg. sender=In Tech, username=In Tech, password=1234 etc.)",SMS Settings
+Failed to request login to Frappe Cloud,In Tech Cloud သို့ ဝင်ရောက်ခွင့် တောင်းဆိုရန် မအောင်မြင်ပါ
+Fiscal Year (requires ERPNext to be installed),Fiscal Year (requires In Tech to be installed)
+Frappe,In Tech
+Frappe,In Tech,Social Login Key
+Frappe CRM,In Tech CRM
+Frappe CRM Allowed User,In Tech CRM ခွင့်ပြုထားသော အသုံးပြုသူ
+Frappe CRM data synchronization is not enabled on ERPNext. Contact System Manager of ERPNext.,In Tech တွင် In Tech CRM ဒေတာထပ်တူပြုခြင်းကို ဖွင့်ထားခြင်းမရှိပါ။ In Tech ၏ စနစ်စီမံခန့်ခွဲသူကို ဆက်သွယ်ပါ။
+Frappe Framework,In Tech
+Frappe Framework Version,In Tech Version
+Frappe Light,In Tech အလင်း
+Frappe Mail,In Tech မေးလ်
+Frappe Mail OAuth Error,In Tech Mail OAuth အမှား
+Frappe Mail Site,In Tech Mail ဆိုက်
+Frappe School,In Tech ကျောင်း
+Frappe Support,In Tech ပံ့ပိုးမှု
+Frappe Technologies,In Tech
+Frappe Technologies Pvt. Ltd.,In Tech
+"Frappe no longer uses Gravatar because it can disclose hashed email addresses to a third-party service. To fully stop this behavior, existing Gravatar image URLs must be deleted.","In Tech no longer uses Gravatar because it can disclose hashed email addresses to a third-party service. To fully stop this behavior, existing Gravatar image URLs must be deleted."
+Frappe page builder using components,အစိတ်အပိုင်းများကိုအသုံးပြု၍ In Tech စာမျက်နှာတည်ဆောက်မှု
+Get to know ERPNext,In Tech ကို ဖော်ထုတ်ပါ
+"If this option is configured 'Yes', ERPNext will prevent you from creating a Purchase Invoice or Receipt without creating a Purchase Order first. This configuration can be overridden for a particular supplier by enabling the 'Allow Purchase Invoice Creation Without Purchase Order' checkbox in the Supplier master.",ဤရွေးချယ်မှုကို 'Yes' အဖြစ် သတ်မှတ်ထားပါက In Tech သည် ဝယ်ယူမှုအမှာစာ အရင်မဖန်တီးဘဲ ဝယ်ယူမှုပြေစာ (သို့) လက်ခံဖြတ်ပိုင်း ဖန်တီးခြင်းကို တားဆီးပါမည်။ ဤသတ်မှတ်ချက်ကို ပေးသွင်းသူတစ်ဦးအတွက် ပေးသွင်းသူ မာစတာတွင် 'Allow Purchase Invoice Creation Without Purchase Order' checkbox ကို ဖွင့်ခြင်းဖြင့် အစားထိုးနိုင်ပါသည်။
+"If this option is configured 'Yes', ERPNext will prevent you from creating a Purchase Invoice without creating a Purchase Receipt first. This configuration can be overridden for a particular supplier by enabling the 'Allow Purchase Invoice Creation Without Purchase Receipt' checkbox in the Supplier master.",ဤရွေးချယ်မှုကို 'ဟုတ်ကဲ့' ဟု သတ်မှတ်ထားပါက In Tech သည် ဝယ်ယူမှုလက်ခံဖြတ်ပိုင်းကို အရင်မဖန်တီးဘဲ ဝယ်ယူမှုပြေစာ ဖန်တီးခြင်းကို တားဆီးပါမည်။ ပေးသွင်းသူမာစတာတွင် 'ဝယ်ယူမှုလက်ခံဖြတ်ပိုင်းမပါဘဲ ဝယ်ယူမှုပြေစာ ဖန်တီးခွင့်ပြုရန်' ရွေးချယ်ကွက်ကို ဖွင့်ခြင်းဖြင့် တစ်ဦးချင်းပေးသွင်းသူအတွက် ဤသတ်မှတ်ချက်ကို ကျော်လွှားနိုင်ပါသည်။
+"If you are maintaining stock of this Item in your Inventory, ERPNext will make a stock ledger entry for each transaction of this item.",သင့်စာရင်းတွင် ဤပစ္စည်း၏ ကုန်လက်ကျန်ကို ထိန်းသိမ်းပါက ဤပစ္စည်း၏ အရောင်းအဝယ်တစ်ခုစီအတွက် In Tech က စတော့လယ်ဂျာ ထည့်သွင်းချက် ပြုလုပ်ပါမည်။
+Open Frappe CRM,Open In Tech CRM
+Open Frappe Helpdesk,Open In Tech Helpdesk
+Please add atleast one user on Allowed Users to allow Data Synchronization from Frappe CRM site.,Please add atleast one user on Allowed Users to allow Data Synchronization from In Tech CRM site.
+"SMS Settings.allowed_roles not found. Update the Frappe Framework app to a version that includes this field, then re-run bench migrate.",SMS Settings.allowed_roles မတွေ့ပါ။ ဤအကွက်ပါဝင်သော ဗားရှင်းသို့ In Tech အက်ပ်ကို အပ်ဒိတ်လုပ်ပြီး bench migrate ကို ပြန်လည်လုပ်ဆောင်ပါ။
+"Something you bought before using ERPNext, with what you paid, where it is, and how much has already depreciated. See [Asset](https://docs.frappe.io/erpnext/user/manual/en/asset).",In Tech ကို မသုံးမီ သင်ဝယ်ယူခဲ့သော ပစ္စည်း၊ ပေးချေခဲ့သော ငွေပမာဏ၊ တည်နေရာနှင့် တန်ဖိုးလျော့ပြီးသား ပမာဏ။ [ပိုင်ဆိုင်မှု](https://docs.frappe.io/erpnext/user/manual/en/asset) ကို ကြည့်ပါ။
+Starting Frappe ...,In Tech စတင်နေသည် ...
+Switch to Frappe CRM,In Tech CRM သို့ ပြောင်းရန်
+This action will unlink this account from any external service integrating ERPNext with your bank accounts. It cannot be undone. Are you certain ?,ဤလုပ်ဆောင်ချက်သည် In Tech ကို သင့်ဘဏ်အကောင့်များနှင့် ချိတ်ဆက်ထားသည့် မည်သည့် ပြင်ပဝန်ဆောင်မှုမှမဆို ဤအကောင့်ကို ဖြုတ်ပစ်ပါမည်။ ပြန်လည်ပြင်ဆင်၍မရပါ။ သေချာပါသလား?
+Update from Frappe Cloud,In Tech Cloud မှ အပ်ဒိတ်လုပ်ရန်
+User not allowed to synchronize data from Frappe CRM on ERPNext. Contact System Manager of ERPNext.,အသုံးပြုသူသည် In Tech CRM မှ In Tech သို့ ဒေတာကို ထပ်တူပြုခွင့် မရှိပါ။ In Tech ၏ စနစ်စီမံခန့်ခွဲသူကို ဆက်သွယ်ပါ။
+Validate Frappe Mail Settings,In Tech မေးလ် ဆက်တင်များကို အတည်ပြုပါ
+Visit Frappe Support Portal,Visit In Tech Support Portal
+"WARNING: Exotel app has been separated from ERPNext, please install the app to continue using Exotel integration.",သတိပေးချက်- Exotel အက်ပ်ကို In Tech မှ ခွဲထုတ်လိုက်ပါပြီ၊ Exotel ပေါင်းစပ်မှုကို ဆက်လက်အသုံးပြုရန် အက်ပ်ကို ထည့်သွင်းပါ။
+Welcome to Frappe!,In Tech သို့ ကြိုဆိုပါသည်!
+[Important] [ERPNext] Auto Reorder Errors,[အရေးကြီး] [In Tech] အလိုအလျောက် ပြန်လည်မှာယူခြင်း အမှားများ

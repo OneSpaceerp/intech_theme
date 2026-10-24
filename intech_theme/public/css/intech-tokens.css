@@ -1,0 +1,127 @@
+/* In Tech — tokens.
+   =========================================================================
+   The brand's colours, sampled from the logo (see palette.py), and the
+   handful of Espresso tokens they replace. Everything else in this theme
+   reads these names, never a hex code, so changing the palette in
+   In Tech Theme Settings repaints the whole desk.
+
+   The three administrator colours (--it-primary, --it-accent, --it-ink)
+   arrive inline from the server before first paint (api/website.py) and
+   again from the boot payload (intech-boot.js); the values below are only
+   the fallbacks.
+
+   Rule: override a token, never a component. Frappe's components read
+   these tokens, so they follow without a selector of ours touching them.
+   ========================================================================= */
+
+:root {
+	--it-ink: #1e2448;
+	--it-deep: #245490;
+	--it-primary: #2472ae;
+	--it-accent: #1e90d2;
+	--it-steel: #7898b8;
+	--it-mist: #abc7da;
+	--it-ice: #c3dfec;
+	--it-frost: #eef5fa;
+
+	/* The eight menu hues. Filled by intech-boot.js from the chosen palette. */
+	--it-m1: #1e90d2;
+	--it-m2: #2472ae;
+	--it-m3: #6d5bd0;
+	--it-m4: #0f9d9a;
+	--it-m5: #d9480f;
+	--it-m6: #2b8a3e;
+	--it-m7: #c2255c;
+	--it-m8: #b7791f;
+
+	--it-gradient: linear-gradient(135deg, var(--it-accent) 0%, var(--it-primary) 45%, var(--it-deep) 100%);
+	--it-gradient-ink: linear-gradient(160deg, #26305e 0%, var(--it-ink) 55%, #141936 100%);
+	--it-glow: 0 10px 30px -12px color-mix(in srgb, var(--it-primary) 55%, transparent);
+	--it-radius-lg: 16px;
+	--it-font: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+/* ---- Light ------------------------------------------------------------- */
+:root,
+[data-theme="light"] {
+	--primary: var(--it-primary);
+	--primary-color: var(--it-primary);
+	--brand-color: var(--it-primary);
+	--btn-primary: var(--it-primary);
+	--border-primary: var(--it-primary);
+	--checkbox-color: var(--it-primary);
+	--date-active-bg: var(--it-primary);
+	--date-active-text: #ffffff;
+	--progress-bar-bg: var(--it-accent);
+	--ink-blue-link: var(--it-primary);
+	--sidebar-select-color: color-mix(in srgb, var(--it-accent) 12%, transparent);
+	--awesomplete-hover-bg: color-mix(in srgb, var(--it-accent) 10%, var(--surface-base, #fff));
+	--heading-color: var(--it-ink);
+
+	/* Espresso's solid button is near-black; In Tech's is its own blue. */
+	--bt-solid-bg: var(--it-primary);
+	--bt-solid-bg-hover: var(--it-deep);
+	--bt-solid-bg-active: var(--it-ink);
+	--bt-solid-fg: #ffffff;
+}
+
+/* ---- Dark -------------------------------------------------------------- */
+/* Dark In Tech is navy, not grey: the page is the ink colour taken down, and
+   cards step up from it in light (elevation in dark comes from light, not
+   shadow). */
+[data-theme="dark"] {
+	--it-frost: #121831;
+
+	--primary: var(--it-accent);
+	--primary-color: var(--it-accent);
+	--brand-color: var(--it-accent);
+	--btn-primary: var(--it-accent);
+	--border-primary: var(--it-accent);
+	--checkbox-color: var(--it-accent);
+	--date-active-bg: var(--it-accent);
+	--progress-bar-bg: var(--it-accent);
+	--ink-blue-link: #6cc3f2;
+	--sidebar-select-color: color-mix(in srgb, var(--it-accent) 22%, transparent);
+	--heading-color: #f1f5fb;
+
+	--surface-base: #0f1428;
+	--bg-color: #0c1022;
+	--fg-color: #141a33;
+	--card-bg: #141a33;
+	--modal-bg: #141a33;
+	--popover-bg: #18203d;
+	--surface-gray-1: #141a33;
+	--surface-gray-2: #1b2342;
+	--surface-gray-3: #222b4e;
+	--surface-elevation-3: #1d2647;
+
+	--bt-solid-bg: var(--it-accent);
+	--bt-solid-bg-hover: #3aa3e0;
+	--bt-solid-bg-active: var(--it-primary);
+	--bt-solid-fg: #07101f;
+}
+
+/* ---- Type -------------------------------------------------------------- */
+html[data-intech] body,
+html[data-intech] .es-button,
+html[data-intech] input,
+html[data-intech] select,
+html[data-intech] textarea {
+	font-family: var(--it-font);
+}
+
+html[data-intech-font="Poppins"] { --it-font: "Poppins", system-ui, sans-serif; }
+html[data-intech-font="Manrope"] { --it-font: "Manrope", system-ui, sans-serif; }
+html[data-intech-font="IBM Plex Sans"] { --it-font: "IBM Plex Sans", system-ui, sans-serif; }
+html[data-intech-font="Cairo"] { --it-font: "Cairo", system-ui, sans-serif; }
+html[data-intech-font="System"] { --it-font: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif; }
+
+/* Arabic always reads better in a face drawn for it. */
+html[data-intech][lang="ar"] body {
+	--it-font: "Cairo", "IBM Plex Sans Arabic", system-ui, sans-serif;
+}
+
+/* Selection and focus in the brand blue. */
+html[data-intech] ::selection {
+	background: color-mix(in srgb, var(--it-accent) 28%, transparent);
+}

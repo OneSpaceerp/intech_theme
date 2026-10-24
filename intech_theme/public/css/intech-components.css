@@ -1,0 +1,143 @@
+/* In Tech — the rest of the desk.
+   =========================================================================
+   Light touches only: the brand's colours reach buttons, links, checkboxes
+   and the like through the tokens in intech-tokens.css. What is here is the
+   little that tokens cannot say.
+   ========================================================================= */
+
+/* ---- Workspaces: an optional, quieter backdrop --------------------------- */
+html[data-intech-workspace-backdrop="1"] body:not(.intech-on-desktop) .page-container[data-page-route="Workspaces"],
+html[data-intech-workspace-backdrop="1"] body:not(.intech-on-desktop)[data-route^="Workspaces"] .layout-main-section-wrapper {
+	background:
+		url("/assets/intech_theme/images/backdrops/circuit.svg") right bottom / 900px auto no-repeat,
+		linear-gradient(180deg, transparent 0%, color-mix(in srgb, var(--it-ice) 35%, transparent) 100%);
+}
+
+[data-theme="dark"][data-intech-workspace-backdrop="1"] body:not(.intech-on-desktop)[data-route^="Workspaces"] .layout-main-section-wrapper {
+	background:
+		url("/assets/intech_theme/images/backdrops/circuit.svg") right bottom / 900px auto no-repeat,
+		linear-gradient(180deg, transparent 0%, rgba(30, 144, 210, 0.06) 100%);
+}
+
+/* ---- Page head ----------------------------------------------------------- */
+html[data-intech] .page-head .title-text {
+	color: var(--heading-color);
+	letter-spacing: -0.01em;
+}
+
+html[data-intech] .indicator-pill.blue,
+html[data-intech] .indicator-pill.light-blue {
+	background: color-mix(in srgb, var(--it-accent) 14%, transparent);
+	color: var(--it-primary);
+}
+
+html[data-intech][data-theme="dark"] .indicator-pill.blue {
+	color: #8fd3ff;
+}
+
+/* ---- Cards and widgets --------------------------------------------------- */
+html[data-intech] .widget.number-widget-box,
+html[data-intech] .widget.dashboard-widget-box,
+html[data-intech] .widget.shortcut-widget-box,
+html[data-intech] .widget.links-widget-box {
+	border-radius: 14px;
+	transition: box-shadow 0.18s ease, border-color 0.18s ease;
+}
+
+html[data-intech] .widget.shortcut-widget-box:hover,
+html[data-intech] .widget.links-widget-box:hover {
+	border-color: color-mix(in srgb, var(--it-accent) 45%, transparent);
+	box-shadow: 0 10px 24px -18px color-mix(in srgb, var(--it-primary) 80%, transparent);
+}
+
+html[data-intech] .widget.number-widget-box .widget-content .number {
+	color: var(--it-ink);
+}
+
+html[data-intech][data-theme="dark"] .widget.number-widget-box .widget-content .number {
+	color: #f2f6fc;
+}
+
+/* ---- Links and focus ----------------------------------------------------- */
+html[data-intech] a:not(.btn):not(.es-button):not(.item-anchor):not(.dropdown-item):not(.icon-link):not(.icon-title):hover {
+	color: var(--it-primary);
+}
+
+html[data-intech] .form-control:focus,
+html[data-intech] .es-input:focus,
+html[data-intech] input:focus-visible,
+html[data-intech] textarea:focus-visible {
+	box-shadow: 0 0 0 2px color-mix(in srgb, var(--it-accent) 30%, transparent);
+}
+
+/* ---- Splash -------------------------------------------------------------- */
+html[data-intech] .splash,
+.intech-splash {
+	background: linear-gradient(160deg, #f6fafd 0%, var(--it-ice, #c3dfec) 60%, var(--it-mist, #abc7da) 100%);
+}
+
+@media (prefers-color-scheme: dark) {
+	.intech-splash {
+		background: linear-gradient(160deg, #0b1022 0%, #121a38 60%, #1a2550 100%);
+	}
+}
+
+/* ---- About dialog -------------------------------------------------------- */
+.intech-about {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	text-align: center;
+	gap: 6px;
+	padding: 8px 4px 4px;
+}
+
+.intech-about-logo {
+	width: 76px;
+	height: 76px;
+	border-radius: 20px;
+	box-shadow: var(--it-glow);
+}
+
+.intech-about-name {
+	margin: 10px 0 0;
+	font-size: 20px;
+	font-weight: 700;
+	color: var(--heading-color);
+}
+
+.intech-about-tagline {
+	margin: 0;
+	color: var(--text-muted);
+}
+
+.intech-about-version {
+	margin-top: 6px;
+	padding: 2px 10px;
+	border-radius: 999px;
+	font-size: 12px;
+	background: color-mix(in srgb, var(--it-accent) 12%, transparent);
+	color: var(--it-primary);
+}
+
+.intech-about-support {
+	margin-top: 10px;
+}
+
+.intech-about-components table td {
+	border-color: var(--border-color);
+}
+
+.intech-about-copyright {
+	margin-top: 14px;
+	font-size: 12px;
+	color: var(--text-light);
+}
+
+/* ---- White label --------------------------------------------------------- */
+/* The sidebar's promotional banners ("Switch to Frappe CRM", "Switch to
+   Helpdesk") advertise the vendor's products; with promotions hidden, the
+   whole band goes. */
+html[data-intech-hide-promotions="1"] .body-sidebar .promotional-banners {
+	display: none !important;
+}

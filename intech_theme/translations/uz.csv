@@ -1,0 +1,52 @@
+&copy; Frappe Technologies Pvt. Ltd. and contributors,&copy; In Tech va hissa qo'shuvchilar
+"<div class=""well"">\n    Edit list of Series in the box. Rules:\n    <ul>\n        <li>Each Series Prefix on a new line.</li>\n        <li>Allowed special characters are ""/"" and ""-""</li>\n        <li>\n            Optionally, set the number of digits in the series using dot (.)\n            followed by hashes (#). For example, "".####"" means that the series\n            will have four digits. Default is five digits.\n        </li>\n        <li>\n            You can also use variables in the series name by putting them\n            between (.) dots\n            <br>\n            Supported Variables:\n            <ul>\n                <li><code>.YYYY.</code> - Year in 4 digits</li>\n                <li><code>.YY.</code> - Year in 2 digits</li>\n                <li><code>.MM.</code> - Month</li>\n                <li><code>.DD.</code> - Day of month</li>\n                <li><code>.WW.</code> - Week of the year</li>\n                <li>\n                    <code>.{fieldname}.</code> - fieldname on the document e.g.\n                    <code>branch</code>\n                </li>\n                <li><code>.FY.</code> - Fiscal Year (requires ERPNext to be installed)</li>\n                <li><code>.ABBR.</code> - Company Abbreviation (requires ERPNext to be installed)</li>\n            </ul>\n        </li>\n    </ul>\n    Examples:\n    <ul>\n        <li>INV-</li>\n        <li>INV-10-</li>\n        <li>INVK-</li>\n        <li>INV-.YYYY.-.{branch}.-.MM.-.####</li>\n    </ul>\n</div>\n<br>\n","<div class=""well"">\n    Katakchadagi Seriyalar ro'yxatini tahrirlang. Qoidalar:\n    <ul>\n        <li>Har bir Seriya prefiksi yangi qatorda.</li>\n        <li>Ruxsat berilgan maxsus belgilar ""/"" va ""-""</li>\n        <li>\n            Ixtiyoriy ravishda, ketma-ketlikdagi raqamlar sonini nuqta (.)\n            va keyin xeshlar (#) yordamida o'rnating. Masalan, "".####""\n            ketma-ketligi to'rtta raqamdan iborat bo'lishini anglatadi. Standart qiymat beshta raqam.\n        </li>\n        <li>\n            Shuningdek, o'zgaruvchilarni ketma-ket nomida\n            ni (.) nuqtalar orasiga qo'yib ishlatishingiz mumkin\n            <br>\n            Qo'llab-quvvatlanadigan o'zgaruvchilar:\n            <ul>\n                <li><code>.YYYY.</code> - Yil 4 xonali</li>\n                <li><code>.YY.</code> - Yil 2 xonali</li>\n                <li><code>.MM.</code> - Oy</li>\n                <li><code>.DD.</code> - Oy kuni</li>\n                <li><code>.WW.</code> - Yil haftasi</li>\n                <li>\n                    <code>.{fieldname}.</code> - hujjatdagi maydon nomi, masalan,\n                    <code>filial</code>\n                </li>\n                <li><code>.FY.</code> - Moliyaviy yil (In Tech o'rnatilishi kerak)</li>\n                <li><code>.ABBR.</code> - Kompaniya qisqartmasi (In Tech o'rnatilishi kerak)</li>\n            </ul>\n        </li>\n    </ul>\n    Misollar:\n    <ul>\n        <li>CHEK-</li>\n        <li>CHEK-10-</li>\n        <li>CHEK-</li>\n        <li>CHEK-.YYYY.-.{branch}.-.MM.-.####</li>\n    </ul>\n</div>\n<br>\n"
+"A Frappe Framework instance can function as an OAuth Client, Resource, or Authorization server. This DocType contains settings related to all three.","In Tech nusxasi OAuth mijozi, resurs yoki avtorizatsiya serveri sifatida ishlashi mumkin. Ushbu DocType uchalasiga ham tegishli sozlamalarni o'z ichiga oladi."
+Allowed Users is not required as Frappe CRM is already installed on the site.,Allowed Users is not required as In Tech CRM is already installed on the site.
+Allowed Users is required for data synchronization from remote Frappe CRM site.,Allowed Users is required for data synchronization from remote In Tech CRM site.
+Company Abbreviation (requires ERPNext to be installed),Kompaniya qisqartmasi (In Tech o'rnatilishini talab qiladi)
+ERPNext,In Tech
+ERPNext Integrations,In Tech Integrations
+ERPNext Settings,In Tech sozlamalari
+ERPNext User ID,In Tech foydalanuvchi identifikatori
+ERPNext will make a stock ledger entry for each transaction of this item. Keep unchecked for non-stock or service items.,In Tech ushbu mahsulotning har bir tranzaksiya uchun zaxira daftariga yozuv kiritadi. Zaxirada bo'lmagan yoki xizmat ko'rsatuvchi mahsulotlar uchun belgilanmagan holda saqlang.
+Enable Frappe CRM Data Synchronization,In Tech CRM ma'lumotlarini sinxronlashni yoqish
+"Enter static url parameters here (Eg. sender=ERPNext, username=ERPNext, password=1234 etc.)","Bu yerga statik URL parametrlarini kiriting (Masalan, sender=In Tech, username=In Tech, password=1234 va boshqalar)."
+"Enter static url parameters here (Eg. sender=ERPNext, username=ERPNext, password=1234 etc.)","Enter static url parameters here (Eg. sender=In Tech, username=In Tech, password=1234 etc.)",SMS Settings
+Failed to request login to Frappe Cloud,In Tech Cloud’ga kirish so‘rovi amalga oshmadi
+Fiscal Year (requires ERPNext to be installed),Moliyaviy yil (In Tech o'rnatilishini talab qiladi)
+Frappe,In Tech
+Frappe,In Tech,Social Login Key
+Frappe CRM,In Tech CRM
+Frappe CRM Allowed User,In Tech CRM ruxsat etilgan foydalanuvchi
+Frappe CRM data synchronization is not enabled on ERPNext. Contact System Manager of ERPNext.,In Tech da In Tech CRM ma'lumotlarini sinxronlash yoqilmagan. In Tech tizim menejeri bilan bog'laning.
+Frappe Framework,In Tech
+Frappe Framework Version,In Tech versiyasi
+Frappe Light,In Tech Light
+Frappe Mail,In Tech Mail
+Frappe Mail OAuth Error,In Tech Mail OAuth xatosi
+Frappe Mail Site,In Tech pochta sayti
+Frappe School,In Tech maktabi
+Frappe Support,In Tech qo'llab-quvvatlashi
+Frappe Technologies,In Tech
+Frappe Technologies Pvt. Ltd.,In Tech
+"Frappe no longer uses Gravatar because it can disclose hashed email addresses to a third-party service. To fully stop this behavior, existing Gravatar image URLs must be deleted.","In Tech endi Gravatar’dan foydalanmaydi, chunki u xeshlangan elektron pochta manzillarini uchinchi tomon xizmatiga oshkor qilishi mumkin. Ushbu xatti-harakatni toʻliq toʻxtatish uchun mavjud Gravatar rasm URL manzillarini oʻchirish kerak."
+Frappe page builder using components,Komponentlardan foydalangan holda In Tech sahifa quruvchisi
+Get to know ERPNext,In Tech bilan tanishing
+"If this option is configured 'Yes', ERPNext will prevent you from creating a Purchase Invoice or Receipt without creating a Purchase Order first. This configuration can be overridden for a particular supplier by enabling the 'Allow Purchase Invoice Creation Without Purchase Order' checkbox in the Supplier master.","Agar ushbu parametr ""Ha"" deb sozlangan bo'lsa, In Tech sizga avval Xarid Buyurtmasini yaratmasdan Xarid Fakturasi yoki Chek yaratishning oldini oladi. Ushbu konfiguratsiyani ma'lum bir yetkazib beruvchi uchun Yetkazib beruvchi asosiy oynasida ""Xarid Buyurtmasisiz Xarid Fakturasini Yaratishga Ruxsat Berish"" katagiga belgi qo'yish orqali bekor qilish mumkin."
+"If this option is configured 'Yes', ERPNext will prevent you from creating a Purchase Invoice without creating a Purchase Receipt first. This configuration can be overridden for a particular supplier by enabling the 'Allow Purchase Invoice Creation Without Purchase Receipt' checkbox in the Supplier master.","Agar ushbu parametr ""Ha"" deb sozlangan bo'lsa, In Tech sizga avval Xarid chekini yaratmasdan Xarid fakturasini yaratishga yo'l qo'ymaydi. Ushbu konfiguratsiyani ma'lum bir yetkazib beruvchi uchun Yetkazib beruvchi asosiy oynasida ""Xarid fakturasini Xarid chekisiz yaratishga ruxsat berish"" katagiga belgi qo'yish orqali bekor qilish mumkin."
+"If you are maintaining stock of this Item in your Inventory, ERPNext will make a stock ledger entry for each transaction of this item.","Agar siz ushbu mahsulot zaxirasini inventarizatsiyangizda saqlasangiz, In Tech ushbu mahsulotning har bir tranzaksiya uchun inventarizatsiya daftariga yozuv kiritadi."
+Open Frappe CRM,In Tech CRM ni oching
+Open Frappe Helpdesk,In Tech yordam markazini oching
+Please add atleast one user on Allowed Users to allow Data Synchronization from Frappe CRM site.,Please add atleast one user on Allowed Users to allow Data Synchronization from In Tech CRM site.
+"SMS Settings.allowed_roles not found. Update the Frappe Framework app to a version that includes this field, then re-run bench migrate.","SMS Settings.allowed_roles topilmadi. In Tech ilovasini ushbu maydonni o‘z ichiga olgan versiyaga yangilang, so‘ng bench migrate buyrug‘ini qayta ishga tushiring."
+"Something you bought before using ERPNext, with what you paid, where it is, and how much has already depreciated. See [Asset](https://docs.frappe.io/erpnext/user/manual/en/asset).","In Tech dan foydalanishdan oldin sotib olgan narsangiz, to'lagan summangiz, qayerda joylashganligi va allaqachon qancha amortizatsiya qilinganligi. [Aktiv](https://docs.frappe.io/erpnext/user/manual/en/asset) ga qarang."
+Starting Frappe ...,In Tech ishga tushirilmoqda ...
+Switch to Frappe CRM,In Tech CRM ga o'tish
+This action will unlink this account from any external service integrating ERPNext with your bank accounts. It cannot be undone. Are you certain ?,Bu harakat ushbu hisobni In Tech’ni bank hisoblaringiz bilan integratsiya qiluvchi har qanday tashqi xizmatdan uzib qo‘yadi. Buni bekor qilib bo‘lmaydi. Ishonchingiz komilmi?
+Update from Frappe Cloud,In Tech Cloud’dan yangilanish
+User not allowed to synchronize data from Frappe CRM on ERPNext. Contact System Manager of ERPNext.,Foydalanuvchiga In Tech CRM dan In Tech ga ma'lumotlarni sinxronlashtirishga ruxsat berilmagan. In Tech ning Tizim menejeriga murojaat qiling.
+Validate Frappe Mail Settings,In Tech Mail sozlamalarini tasdiqlash
+Visit Frappe Support Portal,In Tech qo'llab-quvvatlash portaliga tashrif buyuring
+"WARNING: Exotel app has been separated from ERPNext, please install the app to continue using Exotel integration.","OGOHLANTIRISH: Exotel ilovasi ERP dan ajratildi. Keyin, Exotel integratsiyasidan foydalanishda davom etish uchun ilovani o'rnating."
+Welcome to Frappe!,In Techga xush kelibsiz!
+[Important] [ERPNext] Auto Reorder Errors,[Muhim] [In Tech] Avtomatik qayta tartiblash xatolari

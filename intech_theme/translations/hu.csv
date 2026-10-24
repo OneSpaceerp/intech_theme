@@ -1,0 +1,52 @@
+&copy; Frappe Technologies Pvt. Ltd. and contributors,&copy; In Tech és közreműködők
+"<div class=""well"">\n    Edit list of Series in the box. Rules:\n    <ul>\n        <li>Each Series Prefix on a new line.</li>\n        <li>Allowed special characters are ""/"" and ""-""</li>\n        <li>\n            Optionally, set the number of digits in the series using dot (.)\n            followed by hashes (#). For example, "".####"" means that the series\n            will have four digits. Default is five digits.\n        </li>\n        <li>\n            You can also use variables in the series name by putting them\n            between (.) dots\n            <br>\n            Supported Variables:\n            <ul>\n                <li><code>.YYYY.</code> - Year in 4 digits</li>\n                <li><code>.YY.</code> - Year in 2 digits</li>\n                <li><code>.MM.</code> - Month</li>\n                <li><code>.DD.</code> - Day of month</li>\n                <li><code>.WW.</code> - Week of the year</li>\n                <li>\n                    <code>.{fieldname}.</code> - fieldname on the document e.g.\n                    <code>branch</code>\n                </li>\n                <li><code>.FY.</code> - Fiscal Year (requires ERPNext to be installed)</li>\n                <li><code>.ABBR.</code> - Company Abbreviation (requires ERPNext to be installed)</li>\n            </ul>\n        </li>\n    </ul>\n    Examples:\n    <ul>\n        <li>INV-</li>\n        <li>INV-10-</li>\n        <li>INVK-</li>\n        <li>INV-.YYYY.-.{branch}.-.MM.-.####</li>\n    </ul>\n</div>\n<br>\n","<div class=""well"">\n    Szerkessze a sorozat listáját a mezőben. Szabályok:\n    <ul>\n        <li>Minden sorozat előtagja egy új sorban.</li>\n        <li>A megengedett speciális karakterek: ""/"" és ""-"".</li>\n        <li>\n            Opcionálisan állítsa be a sorozatban szereplő számjegyek számát pont (.) használatával, amelyet hashtagek (#) követnek. Például "".####"" azt jelenti, hogy a sorozat négy számjegyű lesz. Az alapértelmezett érték öt számjegy.\n        </li>\n        <li>\n            Változókat is használhat a sorozat nevében, ha azokat pontok (.) közé helyezi\n            <br>\n            Támogatott változók:\n            <ul>\n                <li><code>.YYYY.</code> - Évszám 4 számjegyben</li>\n                <li><code>.YY.</code> - Év 2 számjegyben</li>\n                <li><code>.MM.</code> - Hónap</li>\n                <li><code>.DD.</code> - A hónap napja</li>\n                <li><code>.WW.</code> - Az év hete</li>\n                <li>\n                    <code>.{fieldname}.</code> - mezőnév a dokumentumon pl.\n                    <code>ág</code>\n                </li>\n                <li><code>.FY.</code> - Fiskális év (az In Tech telepítése szükséges)</li>\n                <li><code>.ABBR.</code> - Vállalat rövidített neve (az In Tech telepítése szükséges).</li>\n            </ul>\n        </li>\n    </ul>\n    Példák:\n    <ul>\n        <li>INV-</li>\n        <li>INV-10-</li>\n        <li>INVK-</li>\n        <li>INV-.YYYY.-.{branch}.-.MM.-.####</li>\n    </ul>\n</div>\n<br>\n"
+"A Frappe Framework instance can function as an OAuth Client, Resource, or Authorization server. This DocType contains settings related to all three.","Egy In Tech példány működhet OAuth-ügyfélként, erőforrásként vagy engedélyezési kiszolgálóként. Ez a DocType mindháromhoz kapcsolódó beállításokat tartalmaz."
+Allowed Users is not required as Frappe CRM is already installed on the site.,Allowed Users is not required as In Tech CRM is already installed on the site.
+Allowed Users is required for data synchronization from remote Frappe CRM site.,Allowed Users is required for data synchronization from remote In Tech CRM site.
+Company Abbreviation (requires ERPNext to be installed),Company Abbreviation (requires In Tech to be installed)
+ERPNext,In Tech
+ERPNext Integrations,In Tech Integrations
+ERPNext Settings,In Tech beállítások
+ERPNext User ID,In Tech felhasználói azonosító
+ERPNext will make a stock ledger entry for each transaction of this item. Keep unchecked for non-stock or service items.,Az In Tech minden egyes tranzakcióhoz készletnyilvántartási tételt készít. Hagyja üresen a nem raktáron lévő vagy szolgáltatási tételeket.
+Enable Frappe CRM Data Synchronization,In Tech CRM adatszinkronizálás engedélyezése
+"Enter static url parameters here (Eg. sender=ERPNext, username=ERPNext, password=1234 etc.)","Írja be a statikus url paramétereket itt (Pl. sender=In Tech, username=In Tech, password=1234 stb.)"
+"Enter static url parameters here (Eg. sender=ERPNext, username=ERPNext, password=1234 etc.)","Enter static url parameters here (Eg. sender=In Tech, username=In Tech, password=1234 etc.)",SMS Settings
+Failed to request login to Frappe Cloud,Nem sikerült bejelentkezést kérni an In Tech Cloudba
+Fiscal Year (requires ERPNext to be installed),Fiscal Year (requires In Tech to be installed)
+Frappe,In Tech
+Frappe,In Tech,Social Login Key
+Frappe CRM,In Tech CRM
+Frappe CRM Allowed User,In Tech CRM engedélyezett felhasználó
+Frappe CRM data synchronization is not enabled on ERPNext. Contact System Manager of ERPNext.,An In Tech CRM adatszinkronizálás nincs engedélyezve az In Techben. Forduljon az In Tech rendszergazdájához.
+Frappe Framework,In Tech
+Frappe Framework Version,In Tech Version
+Frappe Light,In Tech Light
+Frappe Mail,In Tech Mail
+Frappe Mail OAuth Error,In Tech Mail OAuth hiba
+Frappe Mail Site,In Tech Mail oldal
+Frappe School,In Tech Iskola
+Frappe Support,In Tech támogatás
+Frappe Technologies,In Tech
+Frappe Technologies Pvt. Ltd.,In Tech
+"Frappe no longer uses Gravatar because it can disclose hashed email addresses to a third-party service. To fully stop this behavior, existing Gravatar image URLs must be deleted.","In Tech no longer uses Gravatar because it can disclose hashed email addresses to a third-party service. To fully stop this behavior, existing Gravatar image URLs must be deleted."
+Frappe page builder using components,In Tech oldalkészítő komponensek segítségével
+Get to know ERPNext,Ismerkedjen meg az In Tech-tel
+"If this option is configured 'Yes', ERPNext will prevent you from creating a Purchase Invoice or Receipt without creating a Purchase Order first. This configuration can be overridden for a particular supplier by enabling the 'Allow Purchase Invoice Creation Without Purchase Order' checkbox in the Supplier master.","Ha ez az opció „Igen” -re van konfigurálva, az In Tech megakadályozza, hogy vásárlási számlát vagy nyugtát hozzon létre anélkül, hogy először megrendelést hozna létre. Ez a konfiguráció felülírható egy adott szállító számára, ha engedélyezi a Beszállítói mester „Beszerzési számla létrehozásának engedélyezése vásárlási megrendelés nélkül” jelölőnégyzetét."
+"If this option is configured 'Yes', ERPNext will prevent you from creating a Purchase Invoice without creating a Purchase Receipt first. This configuration can be overridden for a particular supplier by enabling the 'Allow Purchase Invoice Creation Without Purchase Receipt' checkbox in the Supplier master.","Ha ez az opció „Igen” -re van konfigurálva, az In Tech megakadályozza a vásárlási számla létrehozását anélkül, hogy előbb létrehozná a vásárlási bizonylatot. Ez a konfiguráció felülírható egy adott szállító számára, ha engedélyezi a Beszállítói mester „Vásárlási számla létrehozásának engedélyezése vásárlási nyugta nélkül” jelölőnégyzetét."
+"If you are maintaining stock of this Item in your Inventory, ERPNext will make a stock ledger entry for each transaction of this item.","Ha raktáron tartja ezt a tételt a készletében, az In Tech minden egyes tranzakcióról készletnyilvántartási tételt készít."
+Open Frappe CRM,Open In Tech CRM
+Open Frappe Helpdesk,Open In Tech Helpdesk
+Please add atleast one user on Allowed Users to allow Data Synchronization from Frappe CRM site.,Please add atleast one user on Allowed Users to allow Data Synchronization from In Tech CRM site.
+"SMS Settings.allowed_roles not found. Update the Frappe Framework app to a version that includes this field, then re-run bench migrate.","A SMS Settings.allowed_roles nem található. Frissítse an In Tech alkalmazást olyan verzióra, amely tartalmazza ezt a mezőt, majd futtassa újra a bench migrate parancsot."
+"Something you bought before using ERPNext, with what you paid, where it is, and how much has already depreciated. See [Asset](https://docs.frappe.io/erpnext/user/manual/en/asset).","Olyan dolog, amelyet az In Tech használata előtt vásárolt, a kifizetett összeggel, a tárolási hellyel és azzal, hogy mekkora értékcsökkenés van már rajta. Lásd: [Eszköz](https://docs.frappe.io/erpnext/user/manual/en/asset)."
+Starting Frappe ...,In Tech elindítása...
+Switch to Frappe CRM,Váltás In Tech CRM-re
+This action will unlink this account from any external service integrating ERPNext with your bank accounts. It cannot be undone. Are you certain ?,Ez a művelet leválasztja ezt a bankszámlát az In Techet a bankszámláival összekapcsoló külső szolgáltatásokról. A művelet nem vonható vissza. Biztosan folytatja?
+Update from Frappe Cloud,Frissítés In Tech Cloud-ról
+User not allowed to synchronize data from Frappe CRM on ERPNext. Contact System Manager of ERPNext.,A felhasználó nem szinkronizálhat adatokat an In Tech CRM-ből az In Tech-be. Forduljon az In Tech rendszergazdájához.
+Validate Frappe Mail Settings,In Tech Mail beállítások ellenőrzése
+Visit Frappe Support Portal,Visit In Tech Support Portal
+"WARNING: Exotel app has been separated from ERPNext, please install the app to continue using Exotel integration.","FIGYELMEZTETÉS: az Exotel app különvált az In Tech rendszertől; kérjük, telepítse az appot az Exotel integration további használatához."
+Welcome to Frappe!,Üdvözlünk an In Tech-ban!
+[Important] [ERPNext] Auto Reorder Errors,[Fontos] [In Tech] hibák automatikus átrendezése

@@ -1,0 +1,52 @@
+&copy; Frappe Technologies Pvt. Ltd. and contributors,&copy; In Tech và những người đóng góp
+"<div class=""well"">\n    Edit list of Series in the box. Rules:\n    <ul>\n        <li>Each Series Prefix on a new line.</li>\n        <li>Allowed special characters are ""/"" and ""-""</li>\n        <li>\n            Optionally, set the number of digits in the series using dot (.)\n            followed by hashes (#). For example, "".####"" means that the series\n            will have four digits. Default is five digits.\n        </li>\n        <li>\n            You can also use variables in the series name by putting them\n            between (.) dots\n            <br>\n            Supported Variables:\n            <ul>\n                <li><code>.YYYY.</code> - Year in 4 digits</li>\n                <li><code>.YY.</code> - Year in 2 digits</li>\n                <li><code>.MM.</code> - Month</li>\n                <li><code>.DD.</code> - Day of month</li>\n                <li><code>.WW.</code> - Week of the year</li>\n                <li>\n                    <code>.{fieldname}.</code> - fieldname on the document e.g.\n                    <code>branch</code>\n                </li>\n                <li><code>.FY.</code> - Fiscal Year (requires ERPNext to be installed)</li>\n                <li><code>.ABBR.</code> - Company Abbreviation (requires ERPNext to be installed)</li>\n            </ul>\n        </li>\n    </ul>\n    Examples:\n    <ul>\n        <li>INV-</li>\n        <li>INV-10-</li>\n        <li>INVK-</li>\n        <li>INV-.YYYY.-.{branch}.-.MM.-.####</li>\n    </ul>\n</div>\n<br>\n","<div class=""well"">\n    Chỉnh sửa danh sách các chuỗi trong ô. Quy tắc:\n    <ul>\n        <li>Mỗi tiền tố chuỗi trên một dòng mới.</li>\n        <li>Các ký tự đặc biệt được phép là ""/"" và ""-""</li>\n        <li>\n            Tùy chọn, đặt số chữ số trong chuỗi bằng dấu chấm (.)\n            theo sau bởi dấu thăng (#). Ví dụ, "".####"" có nghĩa là chuỗi\n            sẽ có bốn chữ số. Mặc định là năm chữ số.\n        </li>\n        <li>\n            Bạn cũng có thể sử dụng biến trong tên chuỗi bằng cách đặt chúng\n            giữa các (.) dấu chấm\n            <br>\n            Các biến được hỗ trợ:\n            <ul>\n                <li><code>.YYYY.</code> - Năm gồm 4 chữ số</li>\n                <li><code>.YY.</code> - Năm gồm 2 chữ số</li>\n                <li><code>.MM.</code> - Tháng</li>\n                <li><code>.DD.</code> - Ngày trong tháng</li>\n                <li><code>.WW.</code> - Tuần trong năm</li>\n                <li>\n                    <code>.{fieldname}.</code> - tên trường trên tài liệu, ví dụ\n                    <code>branch</code>\n                </li>\n                <li><code>.FY.</code> - Năm tài chính (yêu cầu cài đặt In Tech)</li>\n                <li><code>.ABBR.</code> - Viết tắt công ty (yêu cầu cài đặt In Tech)</li>\n            </ul>\n        </li>\n    </ul>\n    Ví dụ:\n    <ul>\n        <li>INV-</li>\n        <li>INV-10-</li>\n        <li>INVK-</li>\n        <li>INV-.YYYY.-.{branch}.-.MM.-.####</li>\n    </ul>\n</div>\n<br>\n"
+"A Frappe Framework instance can function as an OAuth Client, Resource, or Authorization server. This DocType contains settings related to all three.","Một phiên bản Khung In Tech có thể hoạt động như một máy khách OAuth, Tài nguyên hoặc máy chủ Ủy quyền. Loại tài liệu này chứa các cài đặt liên quan đến cả ba."
+Allowed Users is not required as Frappe CRM is already installed on the site.,Allowed Users is not required as In Tech CRM is already installed on the site.
+Allowed Users is required for data synchronization from remote Frappe CRM site.,Allowed Users is required for data synchronization from remote In Tech CRM site.
+Company Abbreviation (requires ERPNext to be installed),Company Abbreviation (requires In Tech to be installed)
+ERPNext,In Tech
+ERPNext Integrations,In Tech Integrations
+ERPNext Settings,Cài đặt In Tech
+ERPNext User ID,ID người dùng In Tech
+ERPNext will make a stock ledger entry for each transaction of this item. Keep unchecked for non-stock or service items.,In Tech sẽ tạo một Bút toán sổ tồn kho cho mỗi giao dịch của mặt hàng này. Bỏ chọn đối với mặt hàng không tồn kho hoặc mặt hàng dịch vụ.
+Enable Frappe CRM Data Synchronization,Bật đồng bộ hóa dữ liệu In Tech CRM
+"Enter static url parameters here (Eg. sender=ERPNext, username=ERPNext, password=1234 etc.)","Nhập các tham số url tĩnh tại đây (Ví dụ: sender=In Tech, username=In Tech, password=1234 v.v.)"
+"Enter static url parameters here (Eg. sender=ERPNext, username=ERPNext, password=1234 etc.)","Enter static url parameters here (Eg. sender=In Tech, username=In Tech, password=1234 etc.)",SMS Settings
+Failed to request login to Frappe Cloud,Không thể yêu cầu đăng nhập vào In Tech Cloud
+Fiscal Year (requires ERPNext to be installed),Fiscal Year (requires In Tech to be installed)
+Frappe,sinh tố
+Frappe,In Tech,Social Login Key
+Frappe CRM,In Tech CRM
+Frappe CRM Allowed User,Người dùng được phép của In Tech CRM
+Frappe CRM data synchronization is not enabled on ERPNext. Contact System Manager of ERPNext.,Đồng bộ hóa dữ liệu In Tech CRM chưa được bật trên In Tech. Vui lòng liên hệ Quản lý hệ thống của In Tech.
+Frappe Framework,In Tech
+Frappe Framework Version,In Tech Version
+Frappe Light,In Tech Sáng
+Frappe Mail,In Tech Mail
+Frappe Mail OAuth Error,Lỗi OAuth In Tech Mail
+Frappe Mail Site,Trang In Tech Mail
+Frappe School,Trường In Tech
+Frappe Support,Hỗ trợ sinh tố
+Frappe Technologies,In Tech
+Frappe Technologies Pvt. Ltd.,In Tech
+"Frappe no longer uses Gravatar because it can disclose hashed email addresses to a third-party service. To fully stop this behavior, existing Gravatar image URLs must be deleted.","In Tech no longer uses Gravatar because it can disclose hashed email addresses to a third-party service. To fully stop this behavior, existing Gravatar image URLs must be deleted."
+Frappe page builder using components,Trình tạo trang In Tech sử dụng các thành phần
+Get to know ERPNext,Làm quen với In Tech
+"If this option is configured 'Yes', ERPNext will prevent you from creating a Purchase Invoice or Receipt without creating a Purchase Order first. This configuration can be overridden for a particular supplier by enabling the 'Allow Purchase Invoice Creation Without Purchase Order' checkbox in the Supplier master.","Nếu tùy chọn này được đặt là 'Có', In Tech sẽ ngăn bạn tạo Hóa đơn mua hàng hoặc Phiếu nhận hàng mà không tạo Đơn đặt hàng trước. Cấu hình này có thể được ghi đè cho một nhà cung cấp cụ thể bằng cách bật hộp kiểm 'Cho phép tạo hóa đơn mua hàng mà không cần đơn đặt hàng' trong mẫu nhà cung cấp."
+"If this option is configured 'Yes', ERPNext will prevent you from creating a Purchase Invoice without creating a Purchase Receipt first. This configuration can be overridden for a particular supplier by enabling the 'Allow Purchase Invoice Creation Without Purchase Receipt' checkbox in the Supplier master.","Nếu tùy chọn này được đặt là 'Có', In Tech sẽ ngăn bạn tạo Hóa đơn mua hàng mà không tạo Phiếu nhận hàng trước. Cấu hình này có thể được ghi đè cho một nhà cung cấp cụ thể bằng cách bật hộp kiểm 'Cho phép tạo hóa đơn mua hàng mà không cần phiếu nhận hàng' trong mẫu nhà cung cấp."
+"If you are maintaining stock of this Item in your Inventory, ERPNext will make a stock ledger entry for each transaction of this item.","Nếu bạn đang duy trì tồn kho của mặt hàng này trong Kho của mình, In Tech sẽ tạo một mục sổ tồn kho cho mỗi giao dịch của mặt hàng này."
+Open Frappe CRM,Open In Tech CRM
+Open Frappe Helpdesk,Open In Tech Helpdesk
+Please add atleast one user on Allowed Users to allow Data Synchronization from Frappe CRM site.,Please add atleast one user on Allowed Users to allow Data Synchronization from In Tech CRM site.
+"SMS Settings.allowed_roles not found. Update the Frappe Framework app to a version that includes this field, then re-run bench migrate.","Không tìm thấy SMS Settings.allowed_roles. Hãy cập nhật ứng dụng In Tech lên phiên bản có trường này, sau đó chạy lại bench migrate."
+"Something you bought before using ERPNext, with what you paid, where it is, and how much has already depreciated. See [Asset](https://docs.frappe.io/erpnext/user/manual/en/asset).","Thứ đã mua trước khi sử dụng In Tech, kèm theo số tiền đã thanh toán, vị trí và mức đã khấu hao. Xem [Tài sản](https://docs.frappe.io/erpnext/user/manual/en/asset)."
+Starting Frappe ...,Bắt đầu In Tech ...
+Switch to Frappe CRM,Chuyển sang In Tech CRM
+This action will unlink this account from any external service integrating ERPNext with your bank accounts. It cannot be undone. Are you certain ?,Hành động này sẽ hủy liên kết tài khoản này khỏi bất kỳ dịch vụ bên ngoài nào tích hợp In Tech với tài khoản ngân hàng của bạn. Điều này không thể hoàn tác. Bạn có chắc chắn không?
+Update from Frappe Cloud,Cập nhật từ In Tech Cloud
+User not allowed to synchronize data from Frappe CRM on ERPNext. Contact System Manager of ERPNext.,Người dùng không được phép đồng bộ dữ liệu từ In Tech CRM sang In Tech. Liên hệ Quản lý hệ thống của In Tech.
+Validate Frappe Mail Settings,Kiểm tra Cài đặt In Tech Mail
+Visit Frappe Support Portal,Visit In Tech Support Portal
+"WARNING: Exotel app has been separated from ERPNext, please install the app to continue using Exotel integration.","CẢNH BÁO: Ứng dụng Exotel đã được tách khỏi In Tech, vui lòng cài đặt ứng dụng để tiếp tục sử dụng tích hợp Exotel."
+Welcome to Frappe!,Chào mừng đến với In Tech!
+[Important] [ERPNext] Auto Reorder Errors,[Quan trọng] [In Tech] Lỗi tự động sắp xếp lại

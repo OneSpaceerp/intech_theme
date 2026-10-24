@@ -1,0 +1,9 @@
+.DS_Store
+*.pyc
+*.egg-info
+__pycache__/
+.pytest_cache/
+node_modules/
+intech_theme/public/dist/
+.ruff_cache/
+.impeccable/

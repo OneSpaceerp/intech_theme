@@ -1,0 +1,52 @@
+&copy; Frappe Technologies Pvt. Ltd. and contributors,crwdns207333:0crwdne207333:0
+"<div class=""well"">\n    Edit list of Series in the box. Rules:\n    <ul>\n        <li>Each Series Prefix on a new line.</li>\n        <li>Allowed special characters are ""/"" and ""-""</li>\n        <li>\n            Optionally, set the number of digits in the series using dot (.)\n            followed by hashes (#). For example, "".####"" means that the series\n            will have four digits. Default is five digits.\n        </li>\n        <li>\n            You can also use variables in the series name by putting them\n            between (.) dots\n            <br>\n            Supported Variables:\n            <ul>\n                <li><code>.YYYY.</code> - Year in 4 digits</li>\n                <li><code>.YY.</code> - Year in 2 digits</li>\n                <li><code>.MM.</code> - Month</li>\n                <li><code>.DD.</code> - Day of month</li>\n                <li><code>.WW.</code> - Week of the year</li>\n                <li>\n                    <code>.{fieldname}.</code> - fieldname on the document e.g.\n                    <code>branch</code>\n                </li>\n                <li><code>.FY.</code> - Fiscal Year (requires ERPNext to be installed)</li>\n                <li><code>.ABBR.</code> - Company Abbreviation (requires ERPNext to be installed)</li>\n            </ul>\n        </li>\n    </ul>\n    Examples:\n    <ul>\n        <li>INV-</li>\n        <li>INV-10-</li>\n        <li>INVK-</li>\n        <li>INV-.YYYY.-.{branch}.-.MM.-.####</li>\n    </ul>\n</div>\n<br>\n",crwdns207433:0{fieldname}crwdnd207433:0{branch}crwdne207433:0
+"A Frappe Framework instance can function as an OAuth Client, Resource, or Authorization server. This DocType contains settings related to all three.",crwdns207475:0crwdne207475:0
+Allowed Users is not required as Frappe CRM is already installed on the site.,crwdns221027:0crwdne221027:0
+Allowed Users is required for data synchronization from remote Frappe CRM site.,crwdns221029:0crwdne221029:0
+Company Abbreviation (requires ERPNext to be installed),crwdns209211:0crwdne209211:0
+ERPNext,crwdns225315:0crwdne225315:0
+ERPNext Integrations,In Tech Integrations
+ERPNext Settings,crwdns225317:0crwdne225317:0
+ERPNext User ID,crwdns225319:0crwdne225319:0
+ERPNext will make a stock ledger entry for each transaction of this item. Keep unchecked for non-stock or service items.,crwdns225321:0crwdne225321:0
+Enable Frappe CRM Data Synchronization,crwdns225509:0crwdne225509:0
+"Enter static url parameters here (Eg. sender=ERPNext, username=ERPNext, password=1234 etc.)",crwdns210687:0crwdne210687:0
+"Enter static url parameters here (Eg. sender=ERPNext, username=ERPNext, password=1234 etc.)","Enter static url parameters here (Eg. sender=In Tech, username=In Tech, password=1234 etc.)",SMS Settings
+Failed to request login to Frappe Cloud,crwdns210961:0crwdne210961:0
+Fiscal Year (requires ERPNext to be installed),crwdns211191:0crwdne211191:0
+Frappe,crwdns211357:0crwdne211357:0
+Frappe,In Tech,Social Login Key
+Frappe CRM,crwdns226369:0crwdne226369:0
+Frappe CRM Allowed User,crwdns226371:0crwdne226371:0
+Frappe CRM data synchronization is not enabled on ERPNext. Contact System Manager of ERPNext.,crwdns226373:0crwdne226373:0
+Frappe Framework,In Tech
+Frappe Framework Version,crwdns211359:0crwdne211359:0
+Frappe Light,crwdns211361:0crwdne211361:0
+Frappe Mail,crwdns211363:0crwdne211363:0
+Frappe Mail OAuth Error,crwdns211365:0crwdne211365:0
+Frappe Mail Site,crwdns211367:0crwdne211367:0
+Frappe School,crwdns226375:0crwdne226375:0
+Frappe Support,crwdns211369:0crwdne211369:0
+Frappe Technologies,In Tech
+Frappe Technologies Pvt. Ltd.,In Tech
+"Frappe no longer uses Gravatar because it can disclose hashed email addresses to a third-party service. To fully stop this behavior, existing Gravatar image URLs must be deleted.",crwdns211371:0crwdne211371:0
+Frappe page builder using components,crwdns211373:0crwdne211373:0
+Get to know ERPNext,crwdns276423:0crwdne276423:0
+"If this option is configured 'Yes', ERPNext will prevent you from creating a Purchase Invoice or Receipt without creating a Purchase Order first. This configuration can be overridden for a particular supplier by enabling the 'Allow Purchase Invoice Creation Without Purchase Order' checkbox in the Supplier master.",crwdns227193:0crwdne227193:0
+"If this option is configured 'Yes', ERPNext will prevent you from creating a Purchase Invoice without creating a Purchase Receipt first. This configuration can be overridden for a particular supplier by enabling the 'Allow Purchase Invoice Creation Without Purchase Receipt' checkbox in the Supplier master.",crwdns227195:0crwdne227195:0
+"If you are maintaining stock of this Item in your Inventory, ERPNext will make a stock ledger entry for each transaction of this item.",crwdns227207:0crwdne227207:0
+Open Frappe CRM,crwdns214163:0crwdne214163:0
+Open Frappe Helpdesk,crwdns214165:0crwdne214165:0
+Please add atleast one user on Allowed Users to allow Data Synchronization from Frappe CRM site.,crwdns231445:0crwdne231445:0
+"SMS Settings.allowed_roles not found. Update the Frappe Framework app to a version that includes this field, then re-run bench migrate.",crwdns267863:0crwdne267863:0
+"Something you bought before using ERPNext, with what you paid, where it is, and how much has already depreciated. See [Asset](https://docs.frappe.io/erpnext/user/manual/en/asset).",crwdns276903:0https://docs.frappe.io/erpnext/user/manual/en/assetcrwdne276903:0
+Starting Frappe ...,crwdns216759:0crwdne216759:0
+Switch to Frappe CRM,crwdns216943:0crwdne216943:0
+This action will unlink this account from any external service integrating ERPNext with your bank accounts. It cannot be undone. Are you certain ?,crwdns237135:0crwdne237135:0
+Update from Frappe Cloud,crwdns217895:0crwdne217895:0
+User not allowed to synchronize data from Frappe CRM on ERPNext. Contact System Manager of ERPNext.,crwdns238313:0crwdne238313:0
+Validate Frappe Mail Settings,crwdns218129:0crwdne218129:0
+Visit Frappe Support Portal,crwdns218273:0crwdne218273:0
+"WARNING: Exotel app has been separated from ERPNext, please install the app to continue using Exotel integration.",crwdns238647:0crwdne238647:0
+Welcome to Frappe!,crwdns218429:0crwdne218429:0
+[Important] [ERPNext] Auto Reorder Errors,crwdns239195:0crwdne239195:0

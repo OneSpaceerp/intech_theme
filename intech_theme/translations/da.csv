@@ -1,0 +1,52 @@
+&copy; Frappe Technologies Pvt. Ltd. and contributors,&copy; In Tech og bidragsydere
+"<div class=""well"">\n    Edit list of Series in the box. Rules:\n    <ul>\n        <li>Each Series Prefix on a new line.</li>\n        <li>Allowed special characters are ""/"" and ""-""</li>\n        <li>\n            Optionally, set the number of digits in the series using dot (.)\n            followed by hashes (#). For example, "".####"" means that the series\n            will have four digits. Default is five digits.\n        </li>\n        <li>\n            You can also use variables in the series name by putting them\n            between (.) dots\n            <br>\n            Supported Variables:\n            <ul>\n                <li><code>.YYYY.</code> - Year in 4 digits</li>\n                <li><code>.YY.</code> - Year in 2 digits</li>\n                <li><code>.MM.</code> - Month</li>\n                <li><code>.DD.</code> - Day of month</li>\n                <li><code>.WW.</code> - Week of the year</li>\n                <li>\n                    <code>.{fieldname}.</code> - fieldname on the document e.g.\n                    <code>branch</code>\n                </li>\n                <li><code>.FY.</code> - Fiscal Year (requires ERPNext to be installed)</li>\n                <li><code>.ABBR.</code> - Company Abbreviation (requires ERPNext to be installed)</li>\n            </ul>\n        </li>\n    </ul>\n    Examples:\n    <ul>\n        <li>INV-</li>\n        <li>INV-10-</li>\n        <li>INVK-</li>\n        <li>INV-.YYYY.-.{branch}.-.MM.-.####</li>\n    </ul>\n</div>\n<br>\n","<div class=""well"">\n    Rediger listen over serier i boksen. Regler:\n    <ul>\n        <li>Hvert seriepræfiks på en ny linje.</li>\n        <li>Tilladte specialtegn er ""/"" og ""-""</li>\n        <li>\n            Valgfrit kan du angive antallet af cifre i serien ved hjælp af punktum (.)\n            efterfulgt af havelåger (#). For eksempel betyder "".####"", at serien\n            vil have fire cifre. Standard er fem cifre.\n        </li>\n        <li>\n            Du kan også bruge variabler i serienavnet ved at placere dem\n            mellem (.) punktummer\n            <br>\n            Understøttede variabler:\n            <ul>\n                <li><code>.YYYY.</code> - År i 4 cifre</li>\n                <li><code>.YY.</code> - År i 2 cifre</li>\n                <li><code>.MM.</code> - Måned</li>\n                <li><code>.DD.</code> - Dag i måneden</li>\n                <li><code>.WW.</code> - Uge i året</li>\n                <li>\n                    <code>.{fieldname}.</code> - feltnavn på dokumentet f.eks.\n                    <code>branch</code>\n                </li>\n                <li><code>.FY.</code> - Regnskabsår (kræver at In Tech er installeret)</li>\n                <li><code>.ABBR.</code> - Virksomhedsforkortelse (kræver at In Tech er installeret)</li>\n            </ul>\n        </li>\n    </ul>\n    Eksempler:\n    <ul>\n        <li>INV-</li>\n        <li>INV-10-</li>\n        <li>INVK-</li>\n        <li>INV-.YYYY.-.{branch}.-.MM.-.####</li>\n    </ul>\n</div>\n<br>\n"
+"A Frappe Framework instance can function as an OAuth Client, Resource, or Authorization server. This DocType contains settings related to all three.","En In Tech-instans kan fungere som en OAuth-klient, ressource eller autorisationsserver. Denne Doctype indeholder indstillinger relateret til alle tre."
+Allowed Users is not required as Frappe CRM is already installed on the site.,Allowed Users is not required as In Tech CRM is already installed on the site.
+Allowed Users is required for data synchronization from remote Frappe CRM site.,Allowed Users is required for data synchronization from remote In Tech CRM site.
+Company Abbreviation (requires ERPNext to be installed),Firmaforkortelse (kræver at In Tech er installeret)
+ERPNext,In Tech
+ERPNext Integrations,In Tech Integrations
+ERPNext Settings,In Tech-indstillinger
+ERPNext User ID,In Tech-bruger-ID
+ERPNext will make a stock ledger entry for each transaction of this item. Keep unchecked for non-stock or service items.,"In Tech vil oprette en lagerpostering for hver transaktion af denne vare. Lad være med at markere feltet for varer, der ikke er på lager, eller servicevarer."
+Enable Frappe CRM Data Synchronization,Aktivér datasynkronisering med In Tech CRM
+"Enter static url parameters here (Eg. sender=ERPNext, username=ERPNext, password=1234 etc.)","Indtast statiske URL-parametre her (F.eks. sender=In Tech, username=In Tech, password=1234 osv.)"
+"Enter static url parameters here (Eg. sender=ERPNext, username=ERPNext, password=1234 etc.)","Enter static url parameters here (Eg. sender=In Tech, username=In Tech, password=1234 etc.)",SMS Settings
+Failed to request login to Frappe Cloud,Kunne ikke anmode om login til In Tech Cloud
+Fiscal Year (requires ERPNext to be installed),Regnskabsår (kræver at In Tech er installeret)
+Frappe,In Tech
+Frappe,In Tech,Social Login Key
+Frappe CRM,In Tech CRM
+Frappe CRM Allowed User,Tilladt bruger i In Tech CRM
+Frappe CRM data synchronization is not enabled on ERPNext. Contact System Manager of ERPNext.,Datasynkronisering med In Tech CRM er ikke aktiveret i In Tech. Kontakt systemadministratoren i In Tech.
+Frappe Framework,In Tech
+Frappe Framework Version,In Tech-version
+Frappe Light,In Tech Light
+Frappe Mail,In Tech Mail
+Frappe Mail OAuth Error,In Tech Mail OAuth-fejl
+Frappe Mail Site,In Tech Mail-websted
+Frappe School,In Tech Skole
+Frappe Support,In Tech-støtte
+Frappe Technologies,In Tech
+Frappe Technologies Pvt. Ltd.,In Tech
+"Frappe no longer uses Gravatar because it can disclose hashed email addresses to a third-party service. To fully stop this behavior, existing Gravatar image URLs must be deleted.","In Tech bruger ikke længere Gravatar, fordi det kan videregive hashede e-mailadresser til en tredjepartstjeneste. For helt at stoppe denne adfærd skal eksisterende Gravatar-billed-URL'er slettes."
+Frappe page builder using components,In Tech sidebygger ved brug af komponenter
+Get to know ERPNext,Lær In Tech at kende
+"If this option is configured 'Yes', ERPNext will prevent you from creating a Purchase Invoice or Receipt without creating a Purchase Order first. This configuration can be overridden for a particular supplier by enabling the 'Allow Purchase Invoice Creation Without Purchase Order' checkbox in the Supplier master.","Hvis denne indstilling er konfigureret til 'Ja', forhindrer In Tech dig i at oprette en købsfaktura eller kvittering uden først at oprette en købsordre. Denne konfiguration kan tilsidesættes for en bestemt leverandør ved at markere afkrydsningsfeltet 'Tillad oprettelse af købsfaktura uden købsordre' i leverandørmasteren."
+"If this option is configured 'Yes', ERPNext will prevent you from creating a Purchase Invoice without creating a Purchase Receipt first. This configuration can be overridden for a particular supplier by enabling the 'Allow Purchase Invoice Creation Without Purchase Receipt' checkbox in the Supplier master.","Hvis denne indstilling er konfigureret til 'Ja', forhindrer In Tech dig i at oprette en købsfaktura uden først at oprette en købskvittering. Denne konfiguration kan tilsidesættes for en bestemt leverandør ved at markere afkrydsningsfeltet 'Tillad oprettelse af købsfaktura uden købskvittering' i leverandørmasteren."
+"If you are maintaining stock of this Item in your Inventory, ERPNext will make a stock ledger entry for each transaction of this item.","Hvis du har lager af denne vare, vil In Tech oprette en lagerpostering for hver transaktion af denne vare."
+Open Frappe CRM,Åbn In Tech CRM
+Open Frappe Helpdesk,Åbn In Tech Helpdesk
+Please add atleast one user on Allowed Users to allow Data Synchronization from Frappe CRM site.,Please add atleast one user on Allowed Users to allow Data Synchronization from In Tech CRM site.
+"SMS Settings.allowed_roles not found. Update the Frappe Framework app to a version that includes this field, then re-run bench migrate.","SMS Settings.allowed_roles blev ikke fundet. Opdater In Tech-appen til en version, der indeholder dette felt, og kør derefter bench migrate igen."
+"Something you bought before using ERPNext, with what you paid, where it is, and how much has already depreciated. See [Asset](https://docs.frappe.io/erpnext/user/manual/en/asset).","Noget du købte, før du begyndte at bruge In Tech, med det beløb du betalte, hvor det befinder sig, og hvor meget der allerede er afskrevet. Se [Aktiv](https://docs.frappe.io/erpnext/user/manual/en/asset)."
+Starting Frappe ...,Starter In Tech ...
+Switch to Frappe CRM,Skift til In Tech CRM
+This action will unlink this account from any external service integrating ERPNext with your bank accounts. It cannot be undone. Are you certain ?,"Denne handling vil fjerne linket til denne konto fra enhver ekstern tjeneste, der integrerer In Tech med dine bankkonti. Handlingen kan ikke fortrydes. Er du sikker?"
+Update from Frappe Cloud,Opdater fra In Tech Cloud
+User not allowed to synchronize data from Frappe CRM on ERPNext. Contact System Manager of ERPNext.,Bruger har ikke tilladelse til at synkronisere data fra In Tech CRM til In Tech. Kontakt systemadministratoren i In Tech.
+Validate Frappe Mail Settings,Valider In Tech Mail-indstillinger
+Visit Frappe Support Portal,Besøg In Tech Support Portal
+"WARNING: Exotel app has been separated from ERPNext, please install the app to continue using Exotel integration.",ADVARSEL: Exotel-appen er blevet adskilt fra In Tech. Installer venligst appen for at fortsætte med at bruge Exotel-integrationen.
+Welcome to Frappe!,Velkommen til In Tech!
+[Important] [ERPNext] Auto Reorder Errors,[Vigtigt] [In Tech] Fejl ved automatisk genbestilling

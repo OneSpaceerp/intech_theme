@@ -1,0 +1,331 @@
+/* In Tech — the /desk page.
+   =========================================================================
+   /desk is Frappe's `desktop` page: a header (.desktop-navbar) over a grid
+   of app tiles (.desktop-container > .icons-container). Frappe puts
+   `desktop-page` on <body> once at start-up and never takes it off, so it
+   cannot say whether /desk is showing; intech-desktop.js keeps
+   `intech-on-desktop` on <body> exactly while it is. This file gives it
+
+     * a backdrop, chosen by html[data-intech-backdrop]:
+         circuit  the logo's traces, drawn large           (default)
+         aurora   soft brand-coloured light
+         mesh     a gradient mesh in the four blues
+         waves    layered waves along the foot of the page
+         image    the uploaded picture under a brand scrim
+         none     the plain page
+     * a frosted header, a greeting (.intech-desk-hero, from intech-desktop.js)
+     * glass tiles with a lift on hover (html[data-intech-glass="1"])
+
+   The backdrop is painted on a fixed ::before of the page wrapper, so the
+   tiles scroll over it and it never repaints on scroll.
+   ========================================================================= */
+
+body.intech-on-desktop {
+	--it-desk-text: var(--it-ink);
+	--it-desk-sub: #49607e;
+	--it-tile-bg: rgba(255, 255, 255, 0.62);
+	--it-tile-border: rgba(255, 255, 255, 0.75);
+	--it-tile-caption: var(--it-ink);
+	--it-desk-base: linear-gradient(160deg, #f6fafd 0%, var(--it-ice) 55%, var(--it-mist) 100%);
+}
+
+[data-theme="dark"] body.intech-on-desktop,
+body.intech-on-desktop[data-theme="dark"] {
+	--it-desk-text: #f2f6fc;
+	--it-desk-sub: rgba(195, 223, 236, 0.78);
+	--it-tile-bg: rgba(20, 26, 51, 0.55);
+	--it-tile-border: rgba(255, 255, 255, 0.09);
+	--it-tile-caption: #eef3fb;
+	--it-desk-base: linear-gradient(160deg, #0b1022 0%, #121a38 55%, #1a2550 100%);
+}
+
+/* ---- The backdrop ------------------------------------------------------ */
+html[data-intech] body.intech-on-desktop {
+	background: transparent;
+}
+
+html[data-intech] body.intech-on-desktop .page-container,
+html[data-intech] body.intech-on-desktop .layout-main-section,
+html[data-intech] body.intech-on-desktop .page-body,
+html[data-intech] body.intech-on-desktop .layout-main {
+	background: transparent;
+}
+
+html[data-intech] body.intech-on-desktop::before {
+	content: "";
+	position: fixed;
+	inset: 0;
+	z-index: -1;
+	pointer-events: none;
+	background: var(--it-desk-base);
+}
+
+html[data-intech-backdrop="circuit"] body.intech-on-desktop::before {
+	background:
+		url("/assets/intech_theme/images/backdrops/circuit.svg") center / cover no-repeat,
+		radial-gradient(circle at 85% 90%, color-mix(in srgb, var(--it-accent) 22%, transparent) 0%, transparent 45%),
+		var(--it-desk-base);
+}
+
+html[data-intech-backdrop="aurora"] body.intech-on-desktop::before {
+	background:
+		radial-gradient(ellipse 60% 50% at 15% 10%, color-mix(in srgb, var(--it-accent) 38%, transparent) 0%, transparent 70%),
+		radial-gradient(ellipse 50% 45% at 85% 20%, color-mix(in srgb, #6d5bd0 26%, transparent) 0%, transparent 70%),
+		radial-gradient(ellipse 70% 55% at 60% 100%, color-mix(in srgb, var(--it-primary) 34%, transparent) 0%, transparent 70%),
+		var(--it-desk-base);
+	animation: it-aurora 26s ease-in-out infinite alternate;
+	background-size: 140% 140%, 140% 140%, 140% 140%, 100% 100%;
+}
+
+html[data-intech-backdrop="mesh"] body.intech-on-desktop::before {
+	background:
+		radial-gradient(at 0% 0%, color-mix(in srgb, var(--it-ice) 90%, transparent) 0, transparent 55%),
+		radial-gradient(at 100% 0%, color-mix(in srgb, var(--it-accent) 45%, transparent) 0, transparent 55%),
+		radial-gradient(at 100% 100%, color-mix(in srgb, var(--it-deep) 55%, transparent) 0, transparent 55%),
+		radial-gradient(at 0% 100%, color-mix(in srgb, var(--it-steel) 60%, transparent) 0, transparent 55%),
+		var(--it-desk-base);
+}
+
+html[data-intech-backdrop="waves"] body.intech-on-desktop::before {
+	background:
+		url("/assets/intech_theme/images/backdrops/waves.svg") bottom / 100% 100% no-repeat,
+		var(--it-desk-base);
+}
+
+html[data-intech-backdrop="image"] body.intech-on-desktop::before {
+	background:
+		linear-gradient(
+			160deg,
+			color-mix(in srgb, var(--it-ink) calc(var(--it-dim, 35) * 1%), transparent) 0%,
+			color-mix(in srgb, var(--it-deep) calc(var(--it-dim, 35) * 1%), transparent) 100%
+		),
+		var(--it-desk-image, none) center / cover no-repeat,
+		var(--it-desk-base);
+}
+
+/* Over a photograph the words go white, whatever the theme. */
+html[data-intech-backdrop="image"] body.intech-on-desktop {
+	--it-desk-text: #ffffff;
+	--it-desk-sub: rgba(255, 255, 255, 0.82);
+	--it-tile-caption: #ffffff;
+	--it-tile-bg: rgba(15, 20, 40, 0.38);
+	--it-tile-border: rgba(255, 255, 255, 0.18);
+}
+
+@keyframes it-aurora {
+	0% { background-position: 0% 0%, 100% 0%, 50% 100%, 0 0; }
+	100% { background-position: 30% 20%, 70% 30%, 40% 70%, 0 0; }
+}
+
+/* ---- Header ------------------------------------------------------------ */
+html[data-intech] body.intech-on-desktop .desktop-navbar {
+	background: color-mix(in srgb, var(--bg-color, #fff) 55%, transparent);
+	backdrop-filter: saturate(1.5) blur(14px);
+	-webkit-backdrop-filter: saturate(1.5) blur(14px);
+	border-bottom: 1px solid color-mix(in srgb, var(--it-steel) 22%, transparent);
+}
+
+html[data-intech] body.intech-on-desktop .desktop-navbar #brand-logo {
+	height: 30px;
+	width: auto;
+}
+
+/* The wordmark beside the mark, put there by intech-desktop.js. */
+html[data-intech] body.intech-on-desktop .intech-wordmark {
+	height: 15px;
+	width: auto;
+	margin-inline-start: 10px;
+	vertical-align: middle;
+}
+
+html[data-intech] body.intech-on-desktop .navbar-home {
+	display: flex;
+	align-items: center;
+}
+
+html[data-intech] body.intech-on-desktop .search-widget-button,
+html[data-intech] body.intech-on-desktop .desktop-navbar-modal-search {
+	background: color-mix(in srgb, var(--bg-color, #fff) 70%, transparent);
+	border: 1px solid color-mix(in srgb, var(--it-steel) 30%, transparent);
+	border-radius: 999px;
+}
+
+html[data-intech] body.intech-on-desktop .search-widget-button:hover,
+html[data-intech] body.intech-on-desktop .desktop-navbar-modal-search:hover {
+	border-color: var(--it-accent);
+	box-shadow: 0 0 0 3px color-mix(in srgb, var(--it-accent) 18%, transparent);
+}
+
+/* ---- Greeting ---------------------------------------------------------- */
+.intech-desk-hero {
+	max-width: 1080px;
+	margin: 0 auto;
+	padding: 44px 24px 6px;
+	color: var(--it-desk-text);
+	animation: it-rise 0.5s ease both;
+}
+
+.intech-desk-hero .intech-hero-eyebrow {
+	display: inline-flex;
+	align-items: center;
+	gap: 8px;
+	padding: 4px 12px 4px 6px;
+	border-radius: 999px;
+	font-size: 12px;
+	font-weight: 600;
+	letter-spacing: 0.04em;
+	color: var(--it-desk-text);
+	background: color-mix(in srgb, var(--it-tile-bg) 100%, transparent);
+	border: 1px solid var(--it-tile-border);
+	backdrop-filter: blur(10px);
+}
+
+.intech-desk-hero .intech-hero-eyebrow img {
+	width: 20px;
+	height: 20px;
+	border-radius: 6px;
+}
+
+.intech-desk-hero h1 {
+	margin: 14px 0 4px;
+	font-size: clamp(26px, 3.2vw, 38px);
+	line-height: 1.15;
+	font-weight: 700;
+	letter-spacing: -0.02em;
+	color: var(--it-desk-text);
+}
+
+.intech-desk-hero h1 .intech-hero-name {
+	color: var(--it-primary);
+}
+
+html[data-intech-backdrop="image"] .intech-desk-hero h1 .intech-hero-name,
+[data-theme="dark"] .intech-desk-hero h1 .intech-hero-name {
+	color: #8fd3ff;
+}
+
+.intech-desk-hero p {
+	margin: 0;
+	font-size: 15px;
+	color: var(--it-desk-sub);
+}
+
+/* ---- App tiles --------------------------------------------------------- */
+/* Frappe lays the container out as a centred row, which would put the greeting
+   beside the grid; a column puts it above. */
+html[data-intech] body.intech-on-desktop .desktop-container {
+	flex-direction: column;
+	align-items: center;
+}
+
+html[data-intech] body.intech-on-desktop .desktop-container > .intech-desk-hero {
+	align-self: stretch;
+	width: 100%;
+	box-sizing: border-box;
+}
+
+html[data-intech] body.intech-on-desktop .desktop-container > .icons-container {
+	margin-top: 22px;
+	padding-top: 18px;
+}
+
+html[data-intech] body.intech-on-desktop .desktop-container > .icons-container > .icons {
+	gap: 22px;
+}
+
+html[data-intech] body.intech-on-desktop .desktop-icon {
+	position: relative;
+	/* inside Frappe's fixed 127 x 126 tile, not added to it */
+	box-sizing: border-box;
+	justify-content: center;
+	padding: 14px 8px 10px;
+	border-radius: var(--it-radius-lg);
+	transition: transform 0.18s ease, box-shadow 0.18s ease, background-color 0.18s ease;
+	animation: it-rise 0.45s ease both;
+}
+
+html[data-intech] body.intech-on-desktop .desktop-icon:nth-child(2) { animation-delay: 0.04s; }
+html[data-intech] body.intech-on-desktop .desktop-icon:nth-child(3) { animation-delay: 0.08s; }
+html[data-intech] body.intech-on-desktop .desktop-icon:nth-child(4) { animation-delay: 0.12s; }
+html[data-intech] body.intech-on-desktop .desktop-icon:nth-child(5) { animation-delay: 0.16s; }
+html[data-intech] body.intech-on-desktop .desktop-icon:nth-child(n + 6) { animation-delay: 0.2s; }
+
+html[data-intech-glass="1"] body.intech-on-desktop .desktop-container > .icons-container > .icons > .desktop-icon {
+	background: var(--it-tile-bg);
+	border: 1px solid var(--it-tile-border);
+	backdrop-filter: blur(16px) saturate(1.3);
+	-webkit-backdrop-filter: blur(16px) saturate(1.3);
+	box-shadow: 0 12px 30px -20px rgba(30, 36, 72, 0.55);
+}
+
+html[data-intech] body.intech-on-desktop .desktop-container > .icons-container > .icons > .desktop-icon:hover {
+	transform: translateY(-4px);
+	box-shadow: 0 22px 40px -22px color-mix(in srgb, var(--it-primary) 70%, transparent);
+}
+
+html[data-intech] body.intech-on-desktop .desktop-icon .icon-container,
+html[data-intech] body.intech-on-desktop .desktop-icon .app-icon {
+	border-radius: 22%;
+	overflow: hidden;
+	box-shadow: 0 10px 22px -12px rgba(30, 36, 72, 0.6);
+}
+
+html[data-intech] body.intech-on-desktop .desktop-icon .icon-title {
+	color: var(--it-tile-caption);
+	font-weight: 600;
+	letter-spacing: -0.005em;
+}
+
+html[data-intech] body.intech-on-desktop .desktop-icon .icon-subtitle {
+	color: var(--it-desk-sub);
+}
+
+/* Module tiles in the Desktop Icons grid: the letter / glyph tiles Frappe
+   draws in grey or one blue take the menu hues in turn instead. */
+html[data-intech-menus="colorful"] body.intech-on-desktop .icons > .desktop-icon:nth-child(8n + 1) { --it-hue: var(--it-m1); }
+html[data-intech-menus="colorful"] body.intech-on-desktop .icons > .desktop-icon:nth-child(8n + 2) { --it-hue: var(--it-m2); }
+html[data-intech-menus="colorful"] body.intech-on-desktop .icons > .desktop-icon:nth-child(8n + 3) { --it-hue: var(--it-m3); }
+html[data-intech-menus="colorful"] body.intech-on-desktop .icons > .desktop-icon:nth-child(8n + 4) { --it-hue: var(--it-m4); }
+html[data-intech-menus="colorful"] body.intech-on-desktop .icons > .desktop-icon:nth-child(8n + 5) { --it-hue: var(--it-m5); }
+html[data-intech-menus="colorful"] body.intech-on-desktop .icons > .desktop-icon:nth-child(8n + 6) { --it-hue: var(--it-m6); }
+html[data-intech-menus="colorful"] body.intech-on-desktop .icons > .desktop-icon:nth-child(8n + 7) { --it-hue: var(--it-m7); }
+html[data-intech-menus="colorful"] body.intech-on-desktop .icons > .desktop-icon:nth-child(8n + 8) { --it-hue: var(--it-m8); }
+
+html[data-intech-menus="colorful"] body.intech-on-desktop .desktop-icon .icon-container:not(:has(img)) {
+	background: linear-gradient(145deg, color-mix(in srgb, var(--it-hue) 78%, #ffffff), var(--it-hue)) !important;
+}
+
+html[data-intech-menus="colorful"] body.intech-on-desktop .desktop-icon .icon-container:not(:has(img)) svg {
+	color: #ffffff !important;
+	--icon-stroke: #ffffff;
+}
+
+/* The edit-mode bar floats on the backdrop too. */
+html[data-intech] body.intech-on-desktop .edit-mode-buttons {
+	background: color-mix(in srgb, var(--bg-color, #fff) 70%, transparent);
+	backdrop-filter: blur(12px);
+	border-radius: 999px;
+	padding: 6px;
+}
+
+@keyframes it-rise {
+	from { opacity: 0; transform: translateY(8px); }
+	to { opacity: 1; transform: none; }
+}
+
+@media (max-width: 767px) {
+	.intech-desk-hero {
+		padding: 26px 16px 0;
+	}
+	html[data-intech] body.intech-on-desktop .intech-wordmark {
+		display: none;
+	}
+}
+
+@media (prefers-reduced-motion: reduce) {
+	html[data-intech] body.intech-on-desktop::before,
+	.intech-desk-hero,
+	html[data-intech] body.intech-on-desktop .desktop-icon {
+		animation: none;
+	}
+}

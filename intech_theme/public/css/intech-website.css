@@ -1,0 +1,33 @@
+/* In Tech — website and portal.
+   The tokens in intech-tokens.css already carry the brand into buttons and
+   links; this is the portal chrome on top. */
+
+html[data-intech] .navbar.navbar-light,
+html[data-intech] .web-navbar {
+	background: rgba(255, 255, 255, 0.88);
+	backdrop-filter: saturate(1.4) blur(10px);
+	border-bottom: 1px solid color-mix(in srgb, var(--it-steel) 22%, transparent);
+}
+
+html[data-intech] .navbar-brand img {
+	max-height: 30px;
+}
+
+html[data-intech] .web-footer {
+	background: var(--it-ink);
+	color: rgba(236, 242, 252, 0.8);
+}
+
+html[data-intech] .web-footer a {
+	color: #ffffff;
+}
+
+html[data-intech] .btn-primary {
+	background: var(--it-primary);
+	border-color: var(--it-primary);
+}
+
+html[data-intech] .btn-primary:hover {
+	background: var(--it-deep);
+	border-color: var(--it-deep);
+}

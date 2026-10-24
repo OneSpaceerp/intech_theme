@@ -1,0 +1,383 @@
+{
+ "actions": [],
+ "allow_rename": 0,
+ "creation": "2026-10-24 12:00:00.000000",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "brand_tab",
+  "brand_name",
+  "brand_name_ar",
+  "tagline",
+  "column_break_brand",
+  "app_logo",
+  "app_logo_dark",
+  "favicon",
+  "splash_image",
+  "brand_details_section",
+  "copyright_text",
+  "support_url",
+  "column_break_details",
+  "email_footer_text",
+  "white_label_tab",
+  "enable_white_label",
+  "scrub_interface_text",
+  "replace_app_icons",
+  "column_break_wl",
+  "hide_vendor_help_links",
+  "hide_vendor_promotions",
+  "hide_update_notifications",
+  "disable_vendor_telemetry",
+  "theme_tab",
+  "primary_color",
+  "accent_color",
+  "ink_color",
+  "column_break_theme",
+  "sidebar_style",
+  "colorful_menus",
+  "menu_palette",
+  "force_dark_mode",
+  "typography_section",
+  "font_family",
+  "desk_tab",
+  "desk_backdrop",
+  "desk_background_image",
+  "backdrop_dim",
+  "column_break_desk",
+  "show_desk_greeting",
+  "glass_tiles",
+  "backdrop_on_workspaces",
+  "apps_tab",
+  "apps_help",
+  "app_identities",
+  "login_tab",
+  "login_headline",
+  "login_subline",
+  "column_break_login",
+  "login_background"
+ ],
+ "fields": [
+  {
+   "fieldname": "brand_tab",
+   "fieldtype": "Tab Break",
+   "label": "Brand"
+  },
+  {
+   "fieldname": "brand_name",
+   "fieldtype": "Data",
+   "label": "Brand Name",
+   "default": "In Tech",
+   "reqd": 1,
+   "description": "Shown wherever the platform would name itself: page titles, the login page, emails, the About dialog."
+  },
+  {
+   "fieldname": "brand_name_ar",
+   "fieldtype": "Data",
+   "label": "Brand Name (Arabic)",
+   "description": "Used when the interface language is Arabic. Leave empty to keep the Latin name."
+  },
+  {
+   "fieldname": "tagline",
+   "fieldtype": "Data",
+   "label": "Tagline",
+   "default": "Intelligent business, connected."
+  },
+  {
+   "fieldname": "column_break_brand",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "app_logo",
+   "fieldtype": "Attach Image",
+   "label": "Logo",
+   "description": "Square mark. Defaults to the In Tech mark shipped with the theme."
+  },
+  {
+   "fieldname": "app_logo_dark",
+   "fieldtype": "Attach Image",
+   "label": "Logo on Dark Surfaces"
+  },
+  {
+   "fieldname": "favicon",
+   "fieldtype": "Attach Image",
+   "label": "Favicon"
+  },
+  {
+   "fieldname": "splash_image",
+   "fieldtype": "Attach Image",
+   "label": "Loading Image"
+  },
+  {
+   "fieldname": "brand_details_section",
+   "fieldtype": "Section Break",
+   "label": "Details"
+  },
+  {
+   "fieldname": "copyright_text",
+   "fieldtype": "Data",
+   "label": "Copyright Line",
+   "description": "Leave empty for © <year> <brand name>."
+  },
+  {
+   "fieldname": "support_url",
+   "fieldtype": "Data",
+   "label": "Support Address",
+   "options": "URL",
+   "description": "Where every Support link leads. Vendor support links are removed when this is empty."
+  },
+  {
+   "fieldname": "column_break_details",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "email_footer_text",
+   "fieldtype": "Small Text",
+   "label": "Email Footer"
+  },
+  {
+   "fieldname": "white_label_tab",
+   "fieldtype": "Tab Break",
+   "label": "White Label"
+  },
+  {
+   "fieldname": "enable_white_label",
+   "fieldtype": "Check",
+   "label": "Enable White Label",
+   "default": "1",
+   "description": "Master switch for everything on this tab."
+  },
+  {
+   "fieldname": "scrub_interface_text",
+   "fieldtype": "Check",
+   "label": "Rename Vendor Names in the Interface",
+   "default": "1",
+   "depends_on": "enable_white_label"
+  },
+  {
+   "fieldname": "replace_app_icons",
+   "fieldtype": "Check",
+   "label": "Replace App Icons and Names",
+   "default": "1",
+   "depends_on": "enable_white_label",
+   "description": "Every app on the apps screen, the dock and the sidebar header gets an In Tech tile and name (see the Apps tab)."
+  },
+  {
+   "fieldname": "column_break_wl",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "hide_vendor_help_links",
+   "fieldtype": "Check",
+   "label": "Hide Vendor Help Links",
+   "default": "1",
+   "depends_on": "enable_white_label"
+  },
+  {
+   "fieldname": "hide_vendor_promotions",
+   "fieldtype": "Check",
+   "label": "Hide Vendor Promotions",
+   "default": "1",
+   "depends_on": "enable_white_label"
+  },
+  {
+   "fieldname": "hide_update_notifications",
+   "fieldtype": "Check",
+   "label": "Hide Update Notifications",
+   "default": "1",
+   "depends_on": "enable_white_label"
+  },
+  {
+   "fieldname": "disable_vendor_telemetry",
+   "fieldtype": "Check",
+   "label": "Disable Vendor Telemetry",
+   "default": "1",
+   "depends_on": "enable_white_label"
+  },
+  {
+   "fieldname": "theme_tab",
+   "fieldtype": "Tab Break",
+   "label": "Theme"
+  },
+  {
+   "fieldname": "primary_color",
+   "fieldtype": "Color",
+   "label": "Primary Colour",
+   "default": "#2472AE"
+  },
+  {
+   "fieldname": "accent_color",
+   "fieldtype": "Color",
+   "label": "Accent Colour",
+   "default": "#1E90D2"
+  },
+  {
+   "fieldname": "ink_color",
+   "fieldtype": "Color",
+   "label": "Ink Colour",
+   "default": "#1E2448",
+   "description": "Headings, the navy sidebar and dark surfaces."
+  },
+  {
+   "fieldname": "column_break_theme",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "sidebar_style",
+   "fieldtype": "Select",
+   "label": "Sidebar Style",
+   "options": "Navy\nGradient\nLight",
+   "default": "Navy"
+  },
+  {
+   "fieldname": "colorful_menus",
+   "fieldtype": "Check",
+   "label": "Colourful Menus",
+   "default": "1",
+   "description": "Gives every sidebar, dock and menu entry its own colour."
+  },
+  {
+   "fieldname": "menu_palette",
+   "fieldtype": "Select",
+   "label": "Menu Palette",
+   "options": "In Tech Spectrum\nOcean\nVivid\nBrand Mono",
+   "default": "In Tech Spectrum",
+   "depends_on": "colorful_menus"
+  },
+  {
+   "fieldname": "force_dark_mode",
+   "fieldtype": "Check",
+   "label": "Force Dark Mode",
+   "default": "0"
+  },
+  {
+   "fieldname": "typography_section",
+   "fieldtype": "Section Break",
+   "label": "Typography"
+  },
+  {
+   "fieldname": "font_family",
+   "fieldtype": "Select",
+   "label": "Font",
+   "options": "Inter\nPoppins\nManrope\nIBM Plex Sans\nCairo\nSystem",
+   "default": "Inter"
+  },
+  {
+   "fieldname": "desk_tab",
+   "fieldtype": "Tab Break",
+   "label": "Desk Background"
+  },
+  {
+   "fieldname": "desk_backdrop",
+   "fieldtype": "Select",
+   "label": "Background on /desk",
+   "options": "Circuit\nAurora\nMesh\nWaves\nImage\nNone",
+   "default": "Circuit"
+  },
+  {
+   "fieldname": "desk_background_image",
+   "fieldtype": "Attach Image",
+   "label": "Background Image",
+   "depends_on": "eval:doc.desk_backdrop=='Image'",
+   "mandatory_depends_on": "eval:doc.desk_backdrop=='Image'"
+  },
+  {
+   "fieldname": "backdrop_dim",
+   "fieldtype": "Int",
+   "label": "Image Dimming (%)",
+   "default": "35",
+   "depends_on": "eval:doc.desk_backdrop=='Image'",
+   "description": "How strongly the brand tint covers the picture, 0 to 80."
+  },
+  {
+   "fieldname": "column_break_desk",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "show_desk_greeting",
+   "fieldtype": "Check",
+   "label": "Show Greeting on /desk",
+   "default": "1"
+  },
+  {
+   "fieldname": "glass_tiles",
+   "fieldtype": "Check",
+   "label": "Glass App Tiles",
+   "default": "1"
+  },
+  {
+   "fieldname": "backdrop_on_workspaces",
+   "fieldtype": "Check",
+   "label": "Also Behind Workspaces",
+   "default": "0",
+   "description": "Draws a quiet version of the background behind every workspace page too."
+  },
+  {
+   "fieldname": "apps_tab",
+   "fieldtype": "Tab Break",
+   "label": "Apps"
+  },
+  {
+   "fieldname": "apps_help",
+   "fieldtype": "HTML",
+   "label": "Apps Help",
+   "options": "<p class=\"text-muted small\">Every installed app already has an In Tech name and tile. Add a row only to change one: the app's package name (for example <code>erpnext</code>, <code>hrms</code>), and the title or icon it should show.</p>"
+  },
+  {
+   "fieldname": "app_identities",
+   "fieldtype": "Table",
+   "label": "App Identities",
+   "options": "In Tech App Identity"
+  },
+  {
+   "fieldname": "login_tab",
+   "fieldtype": "Tab Break",
+   "label": "Login Page"
+  },
+  {
+   "fieldname": "login_headline",
+   "fieldtype": "Data",
+   "label": "Headline",
+   "default": "Run your whole business from one place"
+  },
+  {
+   "fieldname": "login_subline",
+   "fieldtype": "Small Text",
+   "label": "Supporting Line",
+   "default": "Finance, people, stock and sales — connected, secure and always up to date."
+  },
+  {
+   "fieldname": "column_break_login",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "login_background",
+   "fieldtype": "Attach Image",
+   "label": "Background Image",
+   "description": "Leave empty for the circuit artwork."
+  }
+ ],
+ "issingle": 1,
+ "links": [],
+ "modified": "2026-10-24 12:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "In Tech",
+ "name": "In Tech Theme Settings",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}
