@@ -32,10 +32,19 @@ body.intech-login .page_content {
 	background: transparent;
 }
 
+/* Make room for the panel once, on the outermost box: `main` sits inside the wrapper, so
+   giving both the margin counted it twice. `main` is a Bootstrap `.container` with a fixed
+   max-width that does not fit what is left beside the panel, which pushed the form off the
+   right edge behind a horizontal scrollbar. */
 @media (min-width: 900px) {
-	body.intech-login main,
-	body.intech-login .page-content-wrapper {
+	body.intech-login .page-content-wrapper,
+	body.intech-login main:not(.page-content-wrapper main) {
 		margin-inline-start: var(--it-login-panel);
+	}
+
+	body.intech-login main {
+		width: auto;
+		max-width: 100%;
 	}
 }
 
