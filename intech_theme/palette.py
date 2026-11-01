@@ -100,7 +100,7 @@ DEFAULT_DESK_BACKDROP = "Circuit"
 # The ERP itself wears the In Tech mark, redrawn as a tile like the others: it is the product
 # the site is selling.
 APP_IDENTITIES = {
-	"erpnext": {"title": "In Tech ERP", "glyph": "intech", "colors": ("#1E90D2", "#1E2448")},
+	"erpnext": {"title": "Al Mandoos ERP", "glyph": "intech", "colors": ("#1E90D2", "#1E2448")},
 	"frappe": {"title": "Platform", "glyph": "platform", "colors": ("#245490", "#1E2448")},
 	"hrms": {"title": "People", "glyph": "people", "colors": ("#0F9D9A", "#0B5F73")},
 	"crm": {"title": "CRM", "glyph": "crm", "colors": ("#D9480F", "#A61E4D")},

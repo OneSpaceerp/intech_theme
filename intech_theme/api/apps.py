@@ -11,7 +11,7 @@ like In Tech in one place and like its vendor in another.
 import frappe
 from frappe.utils import cint
 
-from intech_theme.branding import get_brand_name, get_settings, is_vendor_asset, rebrand_text
+from intech_theme.branding import get_product_name, get_settings, is_vendor_asset, rebrand_text
 from intech_theme.palette import APP_IDENTITIES, app_icon_url, monogram_icon
 
 # The theme itself never takes a tile.
@@ -31,9 +31,9 @@ def app_identity(app: str, fallback_title: str | None = None, index: int = 0, se
 	shipped = APP_IDENTITIES.get(app) or {}
 
 	title = (own and own.title) or shipped.get("title")
-	if title == "In Tech ERP":
-		# The ERP is the product, so it carries whatever the site calls itself.
-		title = f"{get_brand_name()} ERP"
+	if app == "erpnext" and not (own and own.title):
+		# The ERP is the product, so it carries the product name from the settings.
+		title = get_product_name()
 	if not title:
 		title = rebrand_text(fallback_title or app.replace("_", " ").title())
 

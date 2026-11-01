@@ -7,8 +7,8 @@
 // What it adds:
 //   * `intech-on-desktop` on <body> while /desk is showing -- Frappe's own `desktop-page`
 //     class is set once at start-up and never removed, so the stylesheet cannot use it;
-//   * the wordmark beside the logo in the header;
-//   * a greeting above the app tiles;
+//   * the wordmark beside the logo in the header, with the product name under it;
+//   * a greeting above the app tiles, under the product name;
 //   * In Tech captions on the App tiles of the Desktop Icons grid, whose labels the server
 //     must leave alone (a saved layout finds its icons by label);
 //   * the English / Arabic switcher, in the header here and at the foot of the sidebar on
@@ -55,10 +55,7 @@ function render_hero($page) {
 
 	$container.prepend(`
 		<section class="intech-desk-hero" aria-label="${escape(__("Welcome"))}">
-			<span class="intech-hero-eyebrow">
-				<img src="${escape(settings.tile || settings.logo)}" alt="">
-				${escape(settings.brand_name)}
-			</span>
+			${settings.product_name ? `<span class="intech-hero-eyebrow">${escape(settings.product_name)}</span>` : ""}
 			<h1>${escape(greeting_for(new Date().getHours()))}${
 		name ? `, <span class="intech-hero-name">${escape(name)}</span>` : ""
 	}</h1>
@@ -69,13 +66,18 @@ function render_hero($page) {
 
 function render_wordmark($page) {
 	const $home = $page.find(".desktop-navbar .navbar-home").first();
-	if (!$home.length || $home.find(".intech-wordmark").length) return;
+	if (!$home.length || $home.find(".intech-brand-lockup").length) return;
 
 	const dark = document.documentElement.getAttribute("data-theme") === "dark";
 	const over_photo = settings.desk_backdrop === "image";
 	const src = dark || over_photo ? settings.wordmark_light : settings.wordmark;
 	if (!src) return;
-	$home.append(`<img class="intech-wordmark" src="${escape(src)}" alt="${escape(settings.brand_name)}">`);
+	$home.append(`
+		<span class="intech-brand-lockup">
+			<img class="intech-wordmark" src="${escape(src)}" alt="${escape(settings.brand_name)}">
+			${settings.product_name ? `<span class="intech-product-name">${escape(settings.product_name)}</span>` : ""}
+		</span>
+	`);
 }
 
 // label as the grid shows it -> the In Tech title
@@ -156,6 +158,6 @@ export function start(theme_settings, on_dom_change) {
 /** Called after In Tech Theme Settings is saved, with the settings fetched again. */
 export function refresh(theme_settings) {
 	settings = theme_settings || settings;
-	$(".intech-desk-hero, .intech-wordmark, .intech-lang-switch").remove();
+	$(".intech-desk-hero, .intech-brand-lockup, .intech-lang-switch").remove();
 	decorate();
 }

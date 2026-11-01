@@ -19,6 +19,7 @@ from intech_theme.branding import (
 	get_favicon,
 	get_logo,
 	get_logo_dark,
+	get_product_name,
 	get_settings,
 	is_vendor_asset,
 )
@@ -75,6 +76,7 @@ def client_settings(settings) -> dict:
 	return {
 		"version": __version__,
 		"brand_name": get_brand_name(),
+		"product_name": get_product_name(),
 		"tagline": settings.tagline,
 		"logo": get_logo(),
 		"logo_dark": get_logo_dark(),
