@@ -10,6 +10,7 @@
   "brand_name",
   "brand_name_ar",
   "product_name",
+  "product_name_ar",
   "tagline",
   "column_break_brand",
   "app_logo",
@@ -86,6 +87,13 @@
    "label": "Product Name",
    "default": "Al Mandoos ERP",
    "description": "The ERP's own name: under the wordmark and above the greeting on /desk, and on the ERP's app tile."
+  },
+  {
+   "fieldname": "product_name_ar",
+   "fieldtype": "Data",
+   "label": "Product Name (Arabic)",
+   "default": "المندوس لإدارة المؤسسات",
+   "description": "Used when the interface language is Arabic. Leave empty to keep the Latin name."
   },
   {
    "fieldname": "tagline",

@@ -17,6 +17,7 @@ from intech_theme.utils.text import DEFAULT_BRAND, is_vendor_url, rebrand
 
 SETTINGS_DOCTYPE = "In Tech Theme Settings"
 DEFAULT_PRODUCT = "Al Mandoos ERP"
+DEFAULT_PRODUCT_AR = "المندوس لإدارة المؤسسات"
 
 ASSETS = "/assets/intech_theme/images"
 DEFAULT_LOGO = f"{ASSETS}/intech-mark-256.png"
@@ -38,6 +39,7 @@ DEFAULTS = frappe._dict(
 	brand_name=DEFAULT_BRAND,
 	brand_name_ar="",
 	product_name=DEFAULT_PRODUCT,
+	product_name_ar=DEFAULT_PRODUCT_AR,
 	tagline="Intelligent business, connected.",
 	app_logo="",
 	app_logo_dark="",
@@ -109,8 +111,12 @@ def get_brand_name(lang: str | None = None) -> str:
 	return settings.brand_name or DEFAULT_BRAND
 
 
-def get_product_name() -> str:
-	return get_settings().product_name or DEFAULT_PRODUCT
+def get_product_name(lang: str | None = None) -> str:
+	settings = get_settings()
+	lang = (lang or getattr(frappe.local, "lang", None) or "en").split("-")[0]
+	if lang == "ar" and settings.product_name_ar:
+		return settings.product_name_ar
+	return settings.product_name or DEFAULT_PRODUCT
 
 
 def get_logo() -> str:
